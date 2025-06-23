@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edutech Solutions LLC - Tu Aliado en Transformación Digital</title>
+    <title>Políticas de Privacidad - Edutech Solutions LLC</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         * {
@@ -778,6 +778,228 @@
             opacity: 1;
             transform: translateX(0);
         }
+
+        /* Header Section */
+        .privacy-header {
+            background: var(--gradient-hero);
+            padding: 8rem 0 4rem;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .privacy-header::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="80" cy="20" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="20" cy="80" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="80" cy="80" r="1" fill="%23ffffff" opacity="0.05"/></svg>');
+            animation: float 20s infinite linear;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateX(-50%) translateY(-50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translateX(-50%) translateY(-50%) rotate(360deg);
+            }
+        }
+
+        .privacy-header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .privacy-header h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .privacy-header .header-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .privacy-header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .last-updated {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Main Content */
+        .privacy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .privacy-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .privacy-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .section-content {
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+
+        .section-content p {
+            margin-bottom: 1rem;
+        }
+
+        .section-content ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .section-content li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .section-content li::marker {
+            color: var(--secondary-color);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .contact-info {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+        }
+
+        .contact-info strong {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .right-item {
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 3px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .right-item:hover {
+            transform: translateX(5px);
+        }
+
+        .cta-section {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-contact {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 168, 107, 0.3);
+        }
     </style>
 </head>
 
@@ -801,391 +1023,231 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1>Tu Aliado en <span class="highlight">Transformación Digital</span></h1>
-                <p>En <strong>Edutech Solutions</strong> diseñamos y desarrollamos software a la medida, combinando
-                    innovación y un equipo de expertos tecnológicos para impulsar el crecimiento de tu negocio.</p>
-
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number">10+</span>
-                        <span class="stat-label">Años de Experiencia</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">200+</span>
-                        <span class="stat-label">Proyectos Exitosos</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">Soporte Técnico</span>
-                    </div>
+    <!-- Header -->
+    <section class="privacy-header">
+        <div class="privacy-header-content">
+            <h1>
+                <div class="header-icon">
+                    <i class="fas fa-shield-alt"></i>
                 </div>
-
-                <div class="cta-buttons">
-                    <a href="#servicios" class="btn-primary">
-                        <i class="fas fa-rocket"></i>
-                        Descubre Nuestros Servicios
-                    </a>
-                    <a href="#contacto" class="btn-secondary">
-                        <i class="fas fa-comments"></i>
-                        Habla con un Experto
-                    </a>
-                </div>
-            </div>
-
-            <div class="hero-visual">
-                <div class="tech-circle">
-                    <div class="tech-icon"><i class="fab fa-react"></i></div>
-                    <div class="tech-icon"><i class="fas fa-cloud"></i></div>
-                    <div class="tech-icon"><i class="fas fa-mobile-alt"></i></div>
-                    <div class="tech-icon"><i class="fas fa-database"></i></div>
-                </div>
+                Políticas de Privacidad
+            </h1>
+            <p class="subtitle">Protegemos tu información y respetamos tu privacidad</p>
+            <div class="last-updated">
+                <i class="fas fa-calendar-alt"></i>
+                Última actualización: 18 junio 2025
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="acerca">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">¿Quiénes Somos?</h2>
-                <p class="section-subtitle">Somos una fábrica de software con más de 10 años de experiencia
-                    desarrollando soluciones tecnológicas para clientes de todos los tamaños</p>
-            </div>
-
-            <div class="about-content">
-                <div class="about-text slide-in-left">
-                    <h3>Transformamos Ideas en Realidad Digital</h3>
-                    <p>Desde emprendedores visionarios hasta grandes corporaciones, ayudamos a nuestros clientes a
-                        materializar sus ideas en herramientas digitales poderosas, escalables y centradas en sus
-                        necesidades específicas.</p>
-                    <p>Nuestra misión es impulsar la transformación digital a través de soluciones innovadoras que
-                        generen valor real para tu negocio.</p>
+    <!-- Main Content -->
+    <main class="privacy-content">
+        <!-- Identidad y contacto -->
+        <div class="privacy-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-building"></i>
                 </div>
+                1. Identidad y datos de contacto
+            </h2>
+            <div class="section-content">
+                <div class="contact-info">
+                    <p><strong>Responsable del tratamiento:</strong><br>
+                        Edutech Solutions LLC</p>
 
-                <div class="about-features slide-in-right">
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h4>Desarrollo a Medida</h4>
-                        <p>Soluciones personalizadas que se adaptan perfectamente a tus procesos de negocio.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h4>Equipo Experto</h4>
-                        <p>Profesionales certificados con amplia experiencia en tecnologías de vanguardia.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h4>Resultados Medibles</h4>
-                        <p>Enfoque en ROI y métricas que demuestran el valor de nuestras soluciones.</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h4>Seguridad Garantizada</h4>
-                        <p>Protocolos robustos de seguridad y cumplimiento normativo.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+                    <p><strong>Registered Agent:</strong><br>
+                        Northwest Registered Agent LLC</p>
 
-    <!-- Services Section -->
-    <section class="services" id="servicios">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Nuestros Servicios</h2>
-                <p class="section-subtitle">Cubrimos todo el ciclo de vida del software para ayudarte a alcanzar la
-                    excelencia tecnológica</p>
-            </div>
+                    <p><strong>Dirección registrada:</strong><br>
+                        30 N Gould St Ste N, Sheridan, WY 82801, USA</p>
 
-            <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <div class="service-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h3 class="service-title">Desarrollo Web & APIs</h3>
-                    </div>
-                    <p class="service-description">Arquitecturas de microservicios, RESTful APIs, CI/CD y frameworks
-                        modernos.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> React, Angular, Node.js</li>
-                        <li><i class="fas fa-check"></i> Java Spring Boot, .NET Core</li>
-                        <li><i class="fas fa-check"></i> Microservicios escalables</li>
-                        <li><i class="fas fa-check"></i> CI/CD automatizado</li>
-                    </ul>
-                    <a href="#" class="btn-primary">Ver Detalles</a>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <div class="service-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3 class="service-title">Aplicaciones Móviles</h3>
-                    </div>
-                    <p class="service-description">Apps nativas e híbridas con foco en la mejor experiencia de usuario.
+                    <p><strong>Correo de contacto:</strong><br>
+                        <a href="mailto:support@edutechsolutionsllc.com"
+                            style="color: var(--primary-color);">support@edutechsolutionsllc.com</a>
                     </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Flutter, React Native</li>
-                        <li><i class="fas fa-check"></i> Swift y Kotlin nativo</li>
-                        <li><i class="fas fa-check"></i> UX/UI optimizada</li>
-                        <li><i class="fas fa-check"></i> Publicación en stores</li>
-                    </ul>
-                    <a href="#" class="btn-primary">Ver Detalles</a>
-                </div>
-
-                <div class="service-card fade-in">
-                    <div class="service-header">
-                        <div class="service-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h3 class="service-title">Cloud & DevOps</h3>
-                    </div>
-                    <p class="service-description">Migración a la nube y automatización de procesos de desarrollo.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> AWS, Azure, GCP</li>
-                        <li><i class="fas fa-check"></i> Docker, Kubernetes</li>
-                        <li><i class="fas fa-check"></i> Alta disponibilidad</li>
-                        <li><i class="fas fa-check"></i> Monitoreo 24/7</li>
-                    </ul>
-                    <a href="#" class="btn-primary">Ver Detalles</a>
-                </div>
-
-                <div class="service-card featured fade-in">
-                    <div class="service-header">
-                        <div class="service-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3 class="service-title">SGA - Tecdu</h3>
-                    </div>
-                    <p class="service-description">Sistema de Gestión Académico líder, basado en estándares CACES de
-                        Ecuador.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Cumplimiento CACES</li>
-                        <li><i class="fas fa-check"></i> Gestión completa académica</li>
-                        <li><i class="fas fa-check"></i> App móvil incluida</li>
-                        <li><i class="fas fa-check"></i> Integración bancaria</li>
-                    </ul>
-                    <a href="#" class="btn-primary">Ver Detalles</a>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Tecdu Showcase -->
-    <section class="tecdu-showcase">
-        <div class="container">
-            <div class="tecdu-content">
-                <div class="slide-in-left">
-                    <h2 style="color: white; font-size: 3rem; margin-bottom: 1rem;">Tecdu-SGA</h2>
-                    <h3 style="color: var(--secondary-color); font-size: 1.5rem; margin-bottom: 2rem;">Plataforma
-                        Académica CACES-Compliant</h3>
-                    <p style="font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem;">Digitaliza y automatiza la
-                        administración educativa con nuestro Sistema de Gestión Académico, diseñado específicamente para
-                        cumplir con los estándares del CACES de Ecuador.</p>
-
-                    <div class="tecdu-features">
-                        <div class="tecdu-feature">
-                            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">
-                                <i class="fas fa-certificate"></i> Cumplimiento CACES
-                            </h4>
-                            <p style="font-size: 0.9rem;">Reportes de acreditación y evidencias automáticas</p>
-                        </div>
-                        <div class="tecdu-feature">
-                            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">
-                                <i class="fas fa-university"></i> Gestión Integral
-                            </h4>
-                            <p style="font-size: 0.9rem;">Matrícula, calificaciones, horarios y más</p>
-                        </div>
-                        <div class="tecdu-feature">
-                            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">
-                                <i class="fas fa-credit-card"></i> Módulo Financiero
-                            </h4>
-                            <p style="font-size: 0.9rem;">Integración bancaria y facturación SRI</p>
-                        </div>
-                        <div class="tecdu-feature">
-                            <h4 style="color: var(--secondary-color); margin-bottom: 0.5rem;">
-                                <i class="fas fa-mobile-alt"></i> App Móvil
-                            </h4>
-                            <p style="font-size: 0.9rem;">Carnet digital QR y notificaciones</p>
-                        </div>
-                    </div>
-
-                    <a href="#" class="btn-primary" style="margin-top: 2rem;">
-                        <i class="fas fa-play"></i>
-                        Ver Demo en Vivo
-                    </a>
+        <!-- Datos que recogemos -->
+        <div class="privacy-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-database"></i>
                 </div>
+                2. Datos que recogemos
+            </h2>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Información personal</strong> que tú facilitas: nombre, empresa, cargo, correo
+                        electrónico, teléfono, RUC (en caso de ser cliente en Ecuador).</li>
+                    <li><strong>Información de navegación</strong>: IP, tipo de dispositivo, sistema operativo, páginas
+                        visitadas, duración de sesión, cookies y tecnologías similares.</li>
+                    <li><strong>Datos de comunicación</strong>: mensajes enviados vía formularios de contacto,
+                        comentarios y suscripciones a newsletters.</li>
+                </ul>
+            </div>
+        </div>
 
-                <div class="tecdu-visual slide-in-right">
-                    <div class="dashboard-mockup">
-                        <div class="mockup-header">
-                            <h4 style="color: white; font-size: 1rem;">Dashboard Académico</h4>
-                            <div style="color: var(--secondary-color); font-size: 0.9rem;">
-                                <i class="fas fa-users"></i> 1,247 estudiantes activos
-                            </div>
-                        </div>
-                        <div class="mockup-charts">
-                            <div class="chart-item">
-                                <i class="fas fa-chart-bar"></i>
-                            </div>
-                            <div class="chart-item">
-                                <i class="fas fa-chart-pie"></i>
-                            </div>
-                            <div class="chart-item">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                        </div>
-                        <div
-                            style="margin-top: 1rem; padding: 1rem; background: rgba(0, 168, 107, 0.1); border-radius: 10px; border-left: 4px solid var(--secondary-color);">
-                            <div style="color: var(--secondary-color); font-weight: bold; margin-bottom: 0.5rem;">
-                                <i class="fas fa-check-circle"></i> Cumplimiento CACES: 98.5%
-                            </div>
-                            <div style="color: #cbd5e0; font-size: 0.9rem;">
-                                Reportes automáticos generados • Evidencias documentadas
-                            </div>
-                        </div>
-                    </div>
+        <!-- Finalidades -->
+        <div class="privacy-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-target"></i>
+                </div>
+                3. Finalidades del tratamiento
+            </h2>
+            <div class="section-content">
+                <p>Recabamos y utilizamos tus datos para:</p>
+                <ol>
+                    <li>Prestar y facturar nuestros servicios de consultoría y SaaS (Tecdu-SGA).</li>
+                    <li>Gestionar tu registro y autenticación en la plataforma.</li>
+                    <li>Atender tus consultas, soporte y solicitudes comerciales.</li>
+                    <li>Enviar comunicaciones informativas o promocionales (previo consentimiento).</li>
+                    <li>Mejorar la experiencia de usuario, optimizar nuestro sitio y proteger la seguridad.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Bases legales -->
+        <div class="privacy-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                4. Bases legales
+            </h2>
+            <div class="section-content">
+                <ul>
+                    <li><strong>Consentimiento</strong>: al enviar formularios o suscribirte.</li>
+                    <li><strong>Ejecución de contrato</strong>: para prestar servicios contratados.</li>
+                    <li><strong>Obligación legal</strong>: cumplimiento de obligaciones fiscales y contables
+                        (facturación electrónica SRI, conciliaciones bancarias).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Compartición de datos -->
+        <div class="privacy-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+                5. Compartición de datos
+            </h2>
+            <div class="section-content">
+                <p>Podemos compartir tus datos con:</p>
+                <ul>
+                    <li><strong>Proveedores de servicios</strong>: hosting (Microsoft Azure, Vercel), email marketing,
+                        analítica web (Google Analytics), herramientas de SFTP/API con bancos y el SRI.</li>
+                    <li><strong>Autoridades competentes</strong>: SRI de Ecuador, en el marco de obligaciones
+                        tributarias.</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>Nota importante:</strong> Todos nuestros proveedores están vinculados por acuerdos de
+                    confidencialidad y cumplen con normas de seguridad adecuadas.
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Why Choose Us -->
-    <section class="why-choose">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">¿Por Qué Elegir Edutech Solutions?</h2>
-                <p class="section-subtitle">Nuestro compromiso con la excelencia nos distingue en el mercado tecnológico
-                </p>
-            </div>
-
-            <div class="why-grid">
-                <div class="why-item fade-in">
-                    <div class="why-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3>Calidad Certificada</h3>
-                    <p>Estándares internacionales para asegurar que cada proyecto se realice con los más altos niveles
-                        de calidad y mejores prácticas de la industria.</p>
+        <!-- Derechos de usuarios -->
+        <div class="privacy-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-user-shield"></i>
                 </div>
-
-                <div class="why-item fade-in">
-                    <div class="why-icon">
-                        <i class="fas fa-shield-alt"></i>
+                6. Derechos de los usuarios
+            </h2>
+            <div class="section-content">
+                <p>Tienes derecho a:</p>
+                <div class="rights-grid">
+                    <div class="right-item">
+                        <i class="fas fa-eye" style="color: var(--secondary-color); margin-right: 0.5rem;"></i>
+                        <strong>Acceder</strong> a tus datos
                     </div>
-                    <h3>Seguridad de la Información</h3>
-                    <p>Protocolos robustos de seguridad, cumpliendo con normativas de privacidad y protección de datos.
-                        Tu información está segura con nosotros.</p>
+                    <div class="right-item">
+                        <i class="fas fa-edit" style="color: var(--secondary-color); margin-right: 0.5rem;"></i>
+                        <strong>Rectificar</strong> información incorrecta
+                    </div>
+                    <div class="right-item">
+                        <i class="fas fa-trash" style="color: var(--secondary-color); margin-right: 0.5rem;"></i>
+                        <strong>Suprimir</strong> tus datos
+                    </div>
+                    <div class="right-item">
+                        <i class="fas fa-ban" style="color: var(--secondary-color); margin-right: 0.5rem;"></i>
+                        <strong>Oponerte</strong> al tratamiento
+                    </div>
+                    <div class="right-item">
+                        <i class="fas fa-lock" style="color: var(--secondary-color); margin-right: 0.5rem;"></i>
+                        <strong>Limitar</strong> el tratamiento
+                    </div>
+                    <div class="right-item">
+                        <i class="fas fa-download" style="color: var(--secondary-color); margin-right: 0.5rem;"></i>
+                        <strong>Portar</strong> tus datos
+                    </div>
                 </div>
-
-                <div class="why-item fade-in">
-                    <div class="why-icon">
-                        <i class="fas fa-sync-alt"></i>
-                    </div>
-                    <h3>Metodologías Ágiles</h3>
-                    <p>Implementamos Scrum y Kanban para maximizar la transparencia, comunicación y eficiencia en cada
-                        fase del desarrollo.</p>
-                </div>
-
-                <div class="why-item fade-in">
-                    <div class="why-icon">
-                        <i class="fas fa-headset"></i>
-                    </div>
-                    <h3>Soporte 24/7</h3>
-                    <p>Nuestro equipo está disponible en todo momento para resolver dudas, emergencias y garantizar la
-                        continuidad de tus operaciones.</p>
+                <div class="highlight-box">
+                    Para ejercer tus derechos, envía tu solicitud a <strong>support@edutechsolutionsllc.com</strong>.
+                    Responderemos en un plazo máximo de 30 días.
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <div class="section-header fade-in">
-                <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
-                <p class="section-subtitle">La satisfacción de nuestros clientes es nuestro mayor logro</p>
-            </div>
-
-            <div class="testimonials-grid">
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-text">
-                        El equipo de Edutech Solutions nos ayudó a escalar nuestra plataforma web y reducir costos de
-                        infraestructura en la nube. Su expertise en DevOps y arquitecturas modernas fue clave para
-                        nuestro crecimiento. Excelente soporte en todo momento.
-                    </div>
-                    <div class="testimonial-author">
-                        — María González, CTO de TechStartup
-                    </div>
-                    <div style="margin-top: 0.5rem; color: var(--text-secondary);">
-                        Startup Tecnológica • 50+ empleados
-                    </div>
+        <!-- Seguridad y retención -->
+        <div class="privacy-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-lock"></i>
                 </div>
-
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-text">
-                        Gracias a su fábrica de software, lanzamos nuestra aplicación móvil en tiempo récord. La calidad
-                        del código y la atención al detalle en UX/UI nos permitió posicionarnos antes que la competencia
-                        en el mercado.
-                    </div>
-                    <div class="testimonial-author">
-                        — Carlos Ramírez, CEO de InnovApp
-                    </div>
-                    <div style="margin-top: 0.5rem; color: var(--text-secondary);">
-                        Empresa de Innovación • Sector FinTech
-                    </div>
-                </div>
-
-                <div class="testimonial-card fade-in">
-                    <div class="testimonial-text">
-                        Tecdu-SGA transformó completamente nuestra gestión académica. El cumplimiento CACES automático y
-                        la integración bancaria nos ahorró cientos de horas administrativas. Una inversión que se paga
-                        sola.
-                    </div>
-                    <div class="testimonial-author">
-                        — Dr. Ana Martínez, Rectora
-                    </div>
-                    <div style="margin-top: 0.5rem; color: var(--text-secondary);">
-                        Universidad Privada • 3,000+ estudiantes
-                    </div>
-                </div>
+                7. Seguridad y retención
+            </h2>
+            <div class="section-content">
+                <ul>
+                    <li>Aplicamos medidas técnicas y organizativas (TLS, cifrado en tránsito, backups periódicos,
+                        control de accesos).</li>
+                    <li>Conservamos tus datos mientras exista un fin legítimo o las obligaciones legales lo exijan.</li>
+                </ul>
             </div>
         </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content fade-in">
-                <h2>¿Listo para Impulsar tu Negocio?</h2>
-                <p>Contáctanos y descubre cómo podemos diseñar la solución perfecta para tu transformación digital.
-                    Nuestro equipo de expertos está listo para ayudarte a alcanzar tus objetivos tecnológicos.</p>
-                <div class="cta-buttons">
-                    <a href="#contacto" class="btn-primary" style="background: white; color: var(--primary-color);">
-                        <i class="fas fa-comments"></i>
-                        Habla con un Experto
-                    </a>
-                    <a href="#servicios" class="btn-secondary" style="border-color: white; color: white;">
-                        <i class="fas fa-info-circle"></i>
-                        Conoce Más Servicios
-                    </a>
+        <!-- Cookies -->
+        <div class="privacy-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-cookie-bite"></i>
                 </div>
+                8. Cookies
+            </h2>
+            <div class="section-content">
+                <p>Consulta nuestra <a href="#"
+                        style="color: var(--primary-color); text-decoration: underline;">política de cookies</a> para
+                    más información.</p>
             </div>
         </div>
-    </section>
+
+        <!-- Cambios en la política -->
+        <div class="privacy-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-sync-alt"></i>
+                </div>
+                9. Cambios en la política
+            </h2>
+            <div class="section-content">
+                <p>La presente política puede actualizarse. La fecha de "Última actualización" indica su vigencia.</p>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h3>¿Tienes preguntas sobre nuestra política de privacidad?</h3>
+            <p>Estamos aquí para ayudarte. Contáctanos si necesitas más información.</p>
+            <a href="mailto:support@edutechsolutionsllc.com" class="btn-contact">
+                <i class="fas fa-envelope"></i>
+                Contactar soporte
+            </a>
+        </div>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -1254,34 +1316,15 @@
     <script>
         // Navbar scroll effect
         window.addEventListener('scroll', function () {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
         });
 
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function (entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Smooth scrolling for navigation links
+        // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1294,79 +1337,6 @@
                 }
             });
         });
-
-        // Stats counter animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number');
-            counters.forEach(counter => {
-                const target = counter.textContent.includes('+') ?
-                    parseInt(counter.textContent.replace('+', '')) : counter.textContent;
-
-                if (!isNaN(target)) {
-                    let count = 0;
-                    const increment = target / 100;
-                    const timer = setInterval(() => {
-                        count += increment;
-                        if (count >= target) {
-                            counter.textContent = target + '+';
-                            clearInterval(timer);
-                        } else {
-                            counter.textContent = Math.floor(count) + '+';
-                        }
-                    }, 20);
-                }
-            });
-        }
-
-        // Trigger counter animation when hero section is visible
-        const heroSection = document.querySelector('.hero');
-        const heroObserver = new IntersectionObserver(function (entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    setTimeout(animateCounters, 1000);
-                    heroObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        heroObserver.observe(heroSection);
-
-        // Language switcher
-        document.querySelector('.lang-switch').addEventListener('click', function () {
-            // Toggle between ES and EN
-            if (this.textContent === 'EN') {
-                this.textContent = 'ES';
-                // Here you would implement language switching logic
-                console.log('Switching to English');
-            } else {
-                this.textContent = 'EN';
-                // Here you would implement language switching logic
-                console.log('Switching to Spanish');
-            }
-        });
-
-        // Dynamic typing effect for hero title (optional enhancement)
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                }
-            }
-            type();
-        }
-
-        // Mobile menu toggle (for responsive design)
-        function toggleMobileMenu() {
-            const navMenu = document.querySelector('.nav-menu');
-            navMenu.classList.toggle('active');
-        }
-
-        // Add mobile menu button functionality if needed
-        // This would require additional CSS for mobile menu styles
     </script>
 </body>
 

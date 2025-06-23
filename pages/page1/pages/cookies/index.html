@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Política de Cookies - Edutech Solutions LLC</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #00a86b;
+            --accent-color: #ff6b35;
+            --dark-bg: #0a0e1a;
+            --light-bg: #f8fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #718096;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            --gradient-secondary: linear-gradient(135deg, #00a86b 0%, #007a4d 100%);
+            --gradient-hero: linear-gradient(135deg, #0a0e1a 0%, #1a202c 50%, #2d3748 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--light-bg);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 14, 26, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--secondary-color);
+            font-size: 2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .lang-switch {
+            background: var(--gradient-secondary);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .lang-switch:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Header Section */
+        .cookie-header {
+            background: var(--gradient-hero);
+            padding: 8rem 0 4rem;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cookie-header::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="80" cy="20" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="20" cy="80" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="80" cy="80" r="1" fill="%23ffffff" opacity="0.05"/></svg>');
+            animation: float 20s infinite linear;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateX(-50%) translateY(-50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translateX(-50%) translateY(-50%) rotate(360deg);
+            }
+        }
+
+        .cookie-header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cookie-header h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .cookie-header .header-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .cookie-header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .last-updated {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Main Content */
+        .cookie-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .cookie-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cookie-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-secondary);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .section-content {
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+
+        .section-content p {
+            margin-bottom: 1rem;
+        }
+
+        .section-content ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .section-content li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .section-content li::marker {
+            color: var(--secondary-color);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .cookie-types-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cookie-types-table th {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: bold;
+        }
+
+        .cookie-types-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .cookie-types-table tr:nth-child(even) {
+            background: var(--light-bg);
+        }
+
+        .cookie-types-table tr:hover {
+            background: #f0f9ff;
+        }
+
+        .detailed-cookies-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .detailed-cookies-table th {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 0.8rem;
+            text-align: left;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .detailed-cookies-table td {
+            padding: 0.8rem;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 0.9rem;
+        }
+
+        .detailed-cookies-table tr:nth-child(even) {
+            background: var(--light-bg);
+        }
+
+        .detailed-cookies-table tr:hover {
+            background: #f0f9ff;
+        }
+
+        .browser-instructions {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .browser-card {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--secondary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .browser-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .browser-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .browser-card i {
+            font-size: 1.2rem;
+            color: var(--secondary-color);
+        }
+
+        .consent-notice {
+            background: linear-gradient(135deg, #fff4e6 0%, #fef5e7 100%);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .cta-section {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-contact {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 168, 107, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a0aec0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cookie-header h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+            }
+
+            .cookie-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .browser-instructions {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .cookie-types-table,
+            .detailed-cookies-table {
+                font-size: 0.8rem;
+            }
+
+            .cookie-types-table th,
+            .cookie-types-table td,
+            .detailed-cookies-table th,
+            .detailed-cookies-table td {
+                padding: 0.5rem;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-code"></i>
+                Edutech Solutions
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#acerca" class="nav-link">Acerca de</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#login" class="nav-link">Login</a></li>
+                <li><button class="lang-switch">EN</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="cookie-header">
+        <div class="cookie-header-content">
+            <h1>
+                <div class="header-icon">
+                    <i class="fas fa-cookie-bite"></i>
+                </div>
+                Política de Cookies
+            </h1>
+            <p class="subtitle">Información sobre el uso de cookies y tecnologías similares</p>
+            <div class="last-updated">
+                <i class="fas fa-calendar-alt"></i>
+                Última actualización: 18 junio 2025
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="cookie-content">
+        <!-- Introducción -->
+        <div class="cookie-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                1. Introducción
+            </h2>
+            <div class="section-content">
+                <p>Esta Política de Cookies explica cómo <strong>Edutech Solutions LLC</strong> utiliza "cookies" y
+                    tecnologías similares en su sitio web y aplicaciones (en adelante, el "Sitio"). El objetivo es
+                    ofrecerte información clara sobre qué datos recogemos, con qué finalidad y cómo puedes gestionarlos.
+                </p>
+                <div class="highlight-box">
+                    <strong>Transparencia total:</strong> Creemos en la transparencia absoluta sobre cómo utilizamos las
+                    cookies para mejorar tu experiencia en nuestro sitio.
+                </div>
+            </div>
+        </div>
+
+        <!-- ¿Qué son las cookies? -->
+        <div class="cookie-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                2. ¿Qué son las cookies?
+            </h2>
+            <div class="section-content">
+                <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio
+                    web. Permiten al Sitio recordar tus acciones y preferencias (por ejemplo, idioma o inicio de sesión)
+                    durante un tiempo determinado, para mejorar tu experiencia de usuario.</p>
+                <div class="highlight-box">
+                    <strong>En términos simples:</strong> Las cookies son como pequeñas notas que nuestro sitio web deja
+                    en tu navegador para recordar cosas sobre ti y hacer tu experiencia más personalizada.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tipos de cookies -->
+        <div class="cookie-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                3. Tipos de cookies que utilizamos
+            </h2>
+            <div class="section-content">
+                <table class="cookie-types-table">
+                    <thead>
+                        <tr>
+                            <th>Categoría</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cookies estrictamente necesarias</strong></td>
+                            <td>Imprescindibles para el funcionamiento básico del Sitio (gestión de sesión,
+                                autenticación).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cookies de rendimiento/analítica</strong></td>
+                            <td>Recogen datos anónimos sobre tu uso del Sitio (páginas vistas, tiempo de visita).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cookies funcionales</strong></td>
+                            <td>Guardan tus preferencias (idioma, región, diseño), para personalizar el Sitio.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cookies de publicidad/marketing</strong></td>
+                            <td>Permiten mostrarte anuncios relevantes y medir la eficacia de las campañas.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Listado detallado -->
+        <div class="cookie-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-list-ul"></i>
+                </div>
+                4. Listado detallado de cookies
+            </h2>
+            <div class="section-content">
+                <table class="detailed-cookies-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre de cookie</th>
+                            <th>Proveedor</th>
+                            <th>Finalidad</th>
+                            <th>Caducidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>_ga</code></td>
+                            <td>.edutechsolutionsllc.com</td>
+                            <td>Google Analytics: distinguir usuarios únicos</td>
+                            <td>2 años</td>
+                        </tr>
+                        <tr>
+                            <td><code>_gid</code></td>
+                            <td>.edutechsolutionsllc.com</td>
+                            <td>Google Analytics: distinguir sesiones</td>
+                            <td>24 horas</td>
+                        </tr>
+                        <tr>
+                            <td><code>ASP.NET_SessionId</code></td>
+                            <td>edutechsolutionsllc.com</td>
+                            <td>Mantener tu sesión iniciada</td>
+                            <td>Sesión</td>
+                        </tr>
+                        <tr>
+                            <td><code>cookie_consent</code></td>
+                            <td>edutechsolutionsllc.com</td>
+                            <td>Recordar tu decisión sobre banner de cookies</td>
+                            <td>1 año</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="highlight-box">
+                    <strong>Nota:</strong> Esta tabla es un ejemplo basado en configuraciones típicas. Revisa tu
+                    configuración real de cookies y actualiza los nombres, finalidades y plazos según tu implementación
+                    específica.
+                </div>
+            </div>
+        </div>
+
+        <!-- Gestión de cookies -->
+        <div class="cookie-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                5. Cómo gestionar o desactivar cookies
+            </h2>
+            <div class="section-content">
+                <p>Tienes varias opciones para controlar las cookies:</p>
+
+                <h4 style="color: var(--primary-color); margin: 1.5rem 0 1rem 0;">1. Desde tu navegador</h4>
+                <div class="browser-instructions">
+                    <div class="browser-card">
+                        <h4><i class="fab fa-chrome"></i> Chrome</h4>
+                        <p>Menú ⋮ → Configuración → Privacidad y seguridad → Cookies y otros datos de sitios.</p>
+                    </div>
+                    <div class="browser-card">
+                        <h4><i class="fab fa-firefox"></i> Firefox</h4>
+                        <p>Menú ☰ → Opciones → Privacidad & Seguridad → Cookies y datos del sitio.</p>
+                    </div>
+                    <div class="browser-card">
+                        <h4><i class="fab fa-edge"></i> Edge</h4>
+                        <p>Menú ⋮ → Configuración → Cookies y permisos de sitio.</p>
+                    </div>
+                    <div class="browser-card">
+                        <h4><i class="fab fa-safari"></i> Safari</h4>
+                        <p>Preferencias → Privacidad → Gestionar datos de sitios web.</p>
+                    </div>
+                </div>
+
+                <h4 style="color: var(--primary-color); margin: 1.5rem 0 1rem 0;">2. Banner de cookies</h4>
+                <p>Al ingresar al Sitio, utiliza las opciones del banner para aceptar o rechazar categorías de cookies.
+                </p>
+
+                <h4 style="color: var(--primary-color); margin: 1.5rem 0 1rem 0;">3. Herramientas externas</h4>
+                <p>Servicios como <a href="https://www.youronlinechoices.com/" target="_blank"
+                        style="color: var(--primary-color);">YourOnlineChoices</a> o <a
+                        href="https://www.networkadvertising.org/" target="_blank"
+                        style="color: var(--primary-color);">Network Advertising Initiative</a> para gestionar cookies
+                    publicitarias.</p>
+            </div>
+        </div>
+
+        <!-- Consentimiento y cambios -->
+        <div class="cookie-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                6. Consentimiento y cambios
+            </h2>
+            <div class="section-content">
+                <div class="consent-notice">
+                    <p><strong>Tu consentimiento:</strong> Al continuar navegando en nuestro Sitio sin cambiar la
+                        configuración de tu navegador o hacer clic en "Rechazar cookies" en nuestro banner, aceptas el
+                        uso de cookies de acuerdo con esta Política.</p>
+                </div>
+                <p>Podemos actualizar esta Política en cualquier momento. La fecha de "Última actualización" indica su
+                    vigencia. Te recomendamos revisarla periódicamente.</p>
+                <div class="highlight-box">
+                    <strong>Actualizaciones:</strong> Te notificaremos sobre cambios importantes en nuestra política de
+                    cookies a través de nuestro banner de cookies o por email si tienes una cuenta registrada.
+                </div>
+            </div>
+        </div>
+
+        <!-- Contacto -->
+        <div class="cookie-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                7. Contacto
+            </h2>
+            <div class="section-content">
+                <p>Si tienes preguntas o deseas más información, puedes escribirnos a:</p>
+                <div class="highlight-box">
+                    <p><strong>Correo:</strong> <a href="mailto:support@edutechsolutionsllc.com"
+                            style="color: var(--primary-color);">support@edutechsolutionsllc.com</a></p>
+                    <p style="margin-top: 0.5rem;"><strong>Tiempo de respuesta:</strong> Respondemos consultas sobre
+                        cookies en un plazo máximo de 24 horas laborables.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h3>¿Necesitas ayuda con la configuración de cookies?</h3>
+            <p>Nuestro equipo técnico puede ayudarte a configurar tus preferencias de cookies.</p>
+            <a href="mailto:support@edutechsolutionsllc.com" class="btn-contact">
+                <i class="fas fa-life-ring"></i>
+                Obtener ayuda
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Edutech Solutions</h3>
+                <p style="color: #cbd5e0; margin-bottom: 1rem;">Tu aliado en transformación digital. Desarrollamos
+                    software a medida que impulsa el crecimiento de tu negocio.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" style="font-size: 1.5rem; color: var(--secondary-color);"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="#" style="font-size: 1.5rem; color: var(--secondary-color);"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="#" style="font-size: 1.5rem; color: var(--secondary-color);"><i
+                            class="fab fa-github"></i></a>
+                    <a href="#" style="font-size: 1.5rem; color: var(--secondary-color);"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Servicios</h3>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Desarrollo Web & APIs</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Aplicaciones Móviles</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Cloud & DevOps</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#">SGA - Tecdu</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Consultoría IT</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Empresa</h3>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Acerca de Nosotros</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Nuestro Equipo</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Casos de Éxito</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Carreras</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <div style="color: #cbd5e0;">
+                    <p style="margin-bottom: 0.5rem;"><i class="fas fa-envelope"></i> support@edutechsolutionsllc.com
+                    </p>
+                    <p style="margin-bottom: 0.5rem;"><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p style="margin-bottom: 0.5rem;"><i class="fas fa-map-marker-alt"></i> Sheridan, WY 82801, USA</p>
+                    <p style="margin-bottom: 1rem;"><i class="fas fa-clock"></i> Lun-Vie: 9AM-6PM MST</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Edutech Solutions LLC. Todos los derechos reservados.</p>
+            <div style="margin-top: 0.5rem;">
+                <a href="#" style="margin: 0 1rem;">Políticas de Privacidad</a>
+                <a href="#" style="margin: 0 1rem;">Términos y Condiciones</a>
+                <a href="/cookies" style="margin: 0 1rem; color: var(--secondary-color); font-weight: bold;">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

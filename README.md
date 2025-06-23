@@ -1,11 +1,11 @@
-# Etech Solutions LLC - Website Project
+# Edutech Solutions LLC - Website Project
 
 ## 📋 Project Overview
 
-This project is a complete website redesign for **Etech Solutions LLC** (formerly EduTech Solutions LLC), a software development company specializing in educational technology and custom software solutions. The website showcases their flagship product **Tecdu-SGA** and their comprehensive range of IT services.
+This project is a complete website redesign for **Edutech Solutions LLC** (formerly EduTech Solutions LLC), a software development company specializing in educational technology and custom software solutions. The website showcases their flagship product **Tecdu-SGA** and their comprehensive range of IT services.
 
 ### 🎯 Project Goals
-- **Rebrand** from "EduTech Solutions LLC" to "Etech Solutions LLC"
+- **Rebrand** from "EduTech Solutions LLC" to "Edutech Solutions LLC"
 - Create a modern, responsive website with **bilingual support** (Spanish/English)
 - Showcase **Tecdu-SGA** as the flagship academic management system
 - Implement engaging **tech-focused animations** and microinteractions
@@ -14,7 +14,7 @@ This project is a complete website redesign for **Etech Solutions LLC** (formerl
 ## 🏗️ Project Structure
 
 ```
-etech-website/
+Edutech-website/
 ├── index.html              # Landing page
 ├── services.html           # Services overview
 ├── about.html             # About us page
@@ -156,7 +156,7 @@ Following the Tecdu brand manual:
 ### Phase 1: Design & Structure (June 25, 2025)
 - [x] Content organization and structure
 - [ ] Figma mockups for homepage and key sections
-- [ ] Brand identity adaptation (EduTech → Etech)
+- [ ] Brand identity adaptation (EduTech → Edutech)
 - [ ] Logo design and variations
 
 ### Phase 2: Development & Refinement (June 29, 2025)
@@ -197,13 +197,13 @@ Following the Tecdu brand manual:
 ### Business Goals
 - **Lead Generation**: Contact form conversions
 - **Service Awareness**: Clear value proposition communication
-- **Brand Recognition**: Consistent Etech Solutions identity
+- **Brand Recognition**: Consistent Edutech Solutions identity
 - **Market Positioning**: Tech industry leadership demonstration
 
 ## 📞 Contact & Support
 
 ### Project Team
-- **Client**: Etech Solutions LLC
+- **Client**: Edutech Solutions LLC
 - **Design Phase**: June 18-25, 2025
 - **Development Phase**: June 25-29, 2025
 - **Final Delivery**: July 3, 2025
@@ -216,7 +216,7 @@ Following the Tecdu brand manual:
 ## 📋 Notes & Considerations
 
 ### Brand Transition
-- **Legacy References**: Update all "EduTech Solutions LLC" to "Etech Solutions LLC"
+- **Legacy References**: Update all "EduTech Solutions LLC" to "Edutech Solutions LLC"
 - **URL Structure**: Maintain existing structure from https://edutechsolutionsllc.com/
 - **SEO Continuity**: Preserve search rankings during transition
 
@@ -234,4 +234,4 @@ Following the Tecdu brand manual:
 
 ---
 
-*This README serves as the foundation for the Etech Solutions LLC website project, designed to facilitate seamless design-to-development workflow and eventual Figma integration via html.to.design.*
+*This README serves as the foundation for the Edutech Solutions LLC website project, designed to facilitate seamless design-to-development workflow and eventual Figma integration via html.to.design.*

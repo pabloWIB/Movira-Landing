@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas de Privacidad - Edutech Solutions LLC</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Reset y Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2563eb;
+            --secondary-blue: #3b82f6;
+            --light-blue: #60a5fa;
+            --dark-blue: #1e40af;
+            --black: #000000;
+            --dark-gray: #111827;
+            --medium-gray: #374151;
+            --light-gray: #9ca3af;
+            --white: #ffffff;
+            --accent-cyan: #06b6d4;
+            --gradient-primary: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #2563eb 100%);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background: var(--black);
+            overflow-x: hidden;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            min-height: 100vh;
+        }
+
+        /* Page Header */
+        .page-header {
+            background: var(--gradient-primary);
+            padding: 4rem 3rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .page-title {
+            font-size: 3rem;
+            font-weight: 900;
+            color: white;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .page-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .last-updated {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1rem;
+            font-weight: 500;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Content Sections */
+        .content-section {
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            border-radius: var(--border-radius);
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow-lg);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .content-section:hover {
+            border-color: var(--primary-blue);
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-5px);
+        }
+
+        .content-section:hover::before {
+            opacity: 1;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light-blue);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-number {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 900;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .section-content p {
+            color: var(--light-gray);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .section-content strong {
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        /* Lists */
+        .content-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .content-list li {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 1.25rem;
+            color: var(--light-gray);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .content-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.7rem;
+            width: 8px;
+            height: 8px;
+            background: var(--light-blue);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(96, 165, 250, 0.5);
+        }
+
+        /* Numbered Lists */
+        .numbered-list {
+            list-style: none;
+            counter-reset: list-counter;
+            margin: 1.5rem 0;
+        }
+
+        .numbered-list li {
+            position: relative;
+            padding-left: 3rem;
+            margin-bottom: 1.25rem;
+            color: var(--light-gray);
+            line-height: 1.7;
+            font-size: 1rem;
+            counter-increment: list-counter;
+        }
+
+        .numbered-list li::before {
+            content: counter(list-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Contact Box */
+        .contact-box {
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(37, 99, 235, 0.3);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .contact-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at center, rgba(37, 99, 235, 0.05) 0%, transparent 70%);
+            border-radius: var(--border-radius);
+        }
+
+        .contact-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--light-blue);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--light-gray);
+            font-size: 1rem;
+        }
+
+        .contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Rights Box */
+        .rights-box {
+            background: rgba(6, 182, 212, 0.1);
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .rights-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--accent-cyan);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* Warning Box */
+        .warning-box {
+            background: rgba(251, 191, 36, 0.1);
+            border: 1px solid rgba(251, 191, 36, 0.3);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .warning-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fbbf24;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        /* Email Link */
+        .email-link {
+            color: var(--light-blue);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 2px solid transparent;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .email-link:hover {
+            border-bottom-color: var(--light-blue);
+            transform: translateY(-1px);
+        }
+
+        /* Icon animations */
+        .section-number {
+            animation: pulse-glow 3s infinite;
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: var(--shadow-md);
+            }
+
+            50% {
+                box-shadow: var(--shadow-xl), 0 0 20px rgba(37, 99, 235, 0.3);
+                transform: scale(1.05);
+            }
+        }
+
+        /* Floating orbs for background */
+        .floating-orbs {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            top: 0;
+            left: 0;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--gradient-secondary);
+            opacity: 0.05;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .orb:nth-child(1) {
+            width: 200px;
+            height: 200px;
+            top: 10%;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .orb:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 60%;
+            right: -75px;
+            animation-delay: 2s;
+        }
+
+        .orb:nth-child(3) {
+            width: 100px;
+            height: 100px;
+            bottom: 20%;
+            left: 50%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+
+            .page-header {
+                padding: 3rem 2rem;
+                margin-bottom: 2rem;
+            }
+
+            .page-title {
+                font-size: 2.2rem;
+            }
+
+            .page-subtitle {
+                font-size: 1rem;
+            }
+
+            .content-section {
+                padding: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.4rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 0.75rem;
+            }
+
+            .contact-box,
+            .rights-box,
+            .warning-box {
+                padding: 2rem;
+            }
+
+            .contact-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 1.8rem;
+            }
+
+            .content-section {
+                padding: 1.5rem;
+            }
+
+            .section-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
+        /* Reset y Variables */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #2563eb;
+            --secondary-blue: #3b82f6;
+            --light-blue: #60a5fa;
+            --dark-blue: #1e40af;
+            --black: #000000;
+            --dark-gray: #111827;
+            --medium-gray: #374151;
+            --light-gray: #9ca3af;
+            --white: #ffffff;
+            --accent-cyan: #06b6d4;
+            --gradient-primary: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
+            --gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #2563eb 100%);
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--white);
+            background: var(--black);
+            overflow-x: hidden;
+        }
+
+        /* Navegación */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(37, 99, 235, 0.2);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            background: rgba(0, 0, 0, 0.98);
+            padding: 0.5rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--white);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .logo-subtitle {
+            font-size: 0.8rem;
+            color: var(--light-gray);
+            font-weight: 400;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--light-gray);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--light-blue);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .lang-selector {
+            background: var(--dark-gray);
+            border: 1px solid var(--medium-gray);
+            border-radius: 8px;
+            padding: 0.5rem;
+            color: var(--white);
+            font-size: 0.9rem;
+        }
+
+        .btn-nav-login {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--gradient-primary);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .btn-nav-login:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            border-top: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .footer-content {
+            color: var(--light-gray);
+        }
+
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand {
+            max-width: 350px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-description {
+            color: var(--light-gray);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(37, 99, 235, 0.2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--light-blue);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h4 {
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--light-blue);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--light-gray);
+        }
+
+        .contact-item i {
+            color: var(--light-blue);
+            width: 16px;
+        }
+
+        .footer-bottom {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            margin-bottom: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .footer-legal {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .legal-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .legal-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .legal-links a:hover {
+            color: var(--light-blue);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .hero-visual {
+                height: 400px;
+            }
+
+            .tecdu-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 1rem;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .section-container {
+                padding: 4rem 1rem;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-metrics {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .about-story {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-legal {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .floating-card {
+                width: 250px !important;
+            }
+
+            .card-1,
+            .card-2,
+            .card-3 {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                bottom: auto !important;
+                margin-bottom: 1rem;
+            }
+
+            .visual-container {
+                height: auto;
+            }
+
+            .center-logo {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                transform: none !important;
+                margin: 1rem auto;
+            }
+
+            .dashboard-container {
+                height: auto;
+            }
+
+            .dashboard-mockup,
+            .mobile-mockup {
+                position: relative !important;
+                top: auto !important;
+                left: auto !important;
+                right: auto !important;
+                margin: 1rem auto;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scroll Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--dark-gray);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-blue);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--light-blue);
+        }
+
+        /* Loading States */
+        .loading {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        /* Utility Classes */
+        .text-center {
+            text-align: center;
+        }
+
+        .text-left {
+            text-align: left;
+        }
+
+        .text-right {
+            text-align: right;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .visible {
+            display: block;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .grid {
+            display: grid;
+        }
+
+        .relative {
+            position: relative;
+        }
+
+        .absolute {
+            position: absolute;
+        }
+
+        .fixed {
+            position: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating Orbs Background -->
+    <div class="floating-orbs">
+        <div class="orb"></div>
+        <div class="orb"></div>
+        <div class="orb"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">E</div>
+                <div>
+                    <div class="logo-text">Edutech Solutions</div>
+                    <div class="logo-subtitle">Excellence in Technology</div>
+                </div>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#acerca" class="nav-link">Acerca de</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <select class="lang-selector">
+                    <option value="es">ES</option>
+                    <option value="en">EN</option>
+                </select>
+                <a href="#login" class="btn-nav-login">
+                    <i class="fas fa-user"></i>
+                    Acceder
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <div class="header-content">
+                <h1 class="page-title">Políticas de Privacidad</h1>
+                <p class="page-subtitle">Etech Solutions LLC (EE.UU.)</p>
+                <div class="last-updated">
+                    <i class="fas fa-calendar-alt"></i>
+                    Última actualización: 18 junio 2025
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 1: Identity and Contact -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <div class="section-number">1</div>
+                Identidad y datos de contacto
+            </h2>
+            <div class="section-content">
+                <div class="contact-box">
+                    <div class="contact-title">
+                        <i class="fas fa-building"></i>
+                        Responsable del tratamiento:
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-building"></i></div>
+                        <span><strong>Etech Solutions LLC</strong></span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-user-tie"></i></div>
+                        <span>Registered Agent: Northwest Registered Agent LLC</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <span>Dirección registrada: 30 N Gould St Ste N, Sheridan, WY 82801, USA</span>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <span>Correo de contacto: <a href="mailto:support@edutechsolutionsllc.com"
+                                class="email-link">support@edutechsolutionsllc.com</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: Data Collection -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <div class="section-number">2</div>
+                Datos que recogemos
+            </h2>
+            <div class="section-content">
+                <ul class="content-list">
+                    <li><strong>Información personal</strong> que tú facilitas: nombre, empresa, cargo, correo
+                        electrónico, teléfono, RUC (en caso de ser cliente en Ecuador).</li>
+                    <li><strong>Información de navegación</strong>: IP, tipo de dispositivo, sistema operativo, páginas
+                        visitadas, duración de sesión, cookies y tecnologías similares.</li>
+                    <li><strong>Datos de comunicación</strong>: mensajes enviados vía formularios de contacto,
+                        comentarios y suscripciones a newsletters.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 3: Processing Purposes -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <div class="section-number">3</div>
+                Finalidades del tratamiento
+            </h2>
+            <div class="section-content">
+                <p>Recabamos y utilizamos tus datos para:</p>
+                <ol class="numbered-list">
+                    <li>Prestar y facturar nuestros servicios de consultoría y SaaS (Tecdu-SGA).</li>
+                    <li>Gestionar tu registro y autenticación en la plataforma.</li>
+                    <li>Atender tus consultas, soporte y solicitudes comerciales.</li>
+                    <li>Enviar comunicaciones informativas o promocionales (previo consentimiento).</li>
+                    <li>Mejorar la experiencia de usuario, optimizar nuestro sitio y proteger la seguridad.</li>
+                </ol>
+            </div>
+        </div>
+
+        <!-- Section 4: Legal Basis -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <div class="section-number">4</div>
+                Bases legales
+            </h2>
+            <div class="section-content">
+                <ul class="content-list">
+                    <li><strong>Consentimiento</strong>: al enviar formularios o suscribirte.</li>
+                    <li><strong>Ejecución de contrato</strong>: para prestar servicios contratados.</li>
+                    <li><strong>Obligación legal</strong>: cumplimiento de obligaciones fiscales y contables
+                        (facturación electrónica SRI, conciliaciones bancarias).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 5: Data Sharing -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <div class="section-number">5</div>
+                Compartición de datos
+            </h2>
+            <div class="section-content">
+                <p>Podemos compartir tus datos con:</p>
+                <ul class="content-list">
+                    <li><strong>Proveedores de servicios</strong>: hosting (Microsoft Azure, Vercel), email marketing,
+                        analítica web (Google Analytics), herramientas de SFTP/API con bancos y el SRI.</li>
+                    <li><strong>Autoridades competentes</strong>: SRI de Ecuador, en el marco de obligaciones
+                        tributarias.</li>
+                </ul>
+                <p>Todos nuestros proveedores están vinculados por acuerdos de confidencialidad y cumplen con normas de
+                    seguridad adecuadas.</p>
+            </div>
+        </div>
+
+        <!-- Section 6: User Rights -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <div class="section-number">6</div>
+                Derechos de los usuarios
+            </h2>
+            <div class="section-content">
+                <div class="rights-box">
+                    <div class="rights-title">
+                        <i class="fas fa-user-shield"></i>
+                        Tienes derecho a:
+                    </div>
+                    <ul class="content-list">
+                        <li>Acceder, rectificar o suprimir tus datos.</li>
+                        <li>Oponerte o limitar el tratamiento.</li>
+                        <li>Portar tus datos a otro responsable.</li>
+                    </ul>
+                    <p>Para ejercerlos, envía tu solicitud a <a href="mailto:support@edutechsolutionsllc.com"
+                            class="email-link">support@edutechsolutionsllc.com</a>. Responderemos en un plazo máximo de
+                        30 días.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7: Security and Retention -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <div class="section-number">7</div>
+                Seguridad y retención
+            </h2>
+            <div class="section-content">
+                <ul class="content-list">
+                    <li>Aplicamos medidas técnicas y organizativas (TLS, cifrado en tránsito, backups periódicos,
+                        control de accesos).</li>
+                    <li>Conservamos tus datos mientras exista un fin legítimo o las obligaciones legales lo exijan.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Section 8: Cookies -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <div class="section-number">8</div>
+                Cookies
+            </h2>
+            <div class="section-content">
+                <p>Consulta nuestra <a href="#" class="email-link">política de cookies</a> para más información
+                    detallada.</p>
+            </div>
+        </div>
+
+        <!-- Section 9: Policy Changes -->
+        <div class="content-section">
+            <h2 class="section-title">
+                <div class="section-number">9</div>
+                Cambios en la política
+            </h2>
+            <div class="section-content">
+                <div class="warning-box">
+                    <div class="warning-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Aviso importante
+                    </div>
+                    <p>La presente política puede actualizarse. La fecha de "Última actualización" indica su vigencia.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="section-container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <div class="logo-icon">E</div>
+                            <div>
+                                <div class="logo-text">Edutech Solutions</div>
+                                <div class="logo-subtitle">Excellence in Technology</div>
+                            </div>
+                        </div>
+                        <p class="footer-description">
+                            Tu aliado en transformación digital. Desarrollamos software a medida que impulsa el
+                            crecimiento de tu negocio con más de 10 años de experiencia en el mercado.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <div class="footer-section">
+                            <h4>Servicios</h4>
+                            <ul>
+                                <li><a href="#">Desarrollo Web & APIs</a></li>
+                                <li><a href="#">Aplicaciones Móviles</a></li>
+                                <li><a href="#">Cloud & DevOps</a></li>
+                                <li><a href="#">SGA - Tecdu</a></li>
+                                <li><a href="#">Consultoría IT</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-section">
+                            <h4>Empresa</h4>
+                            <ul>
+                                <li><a href="#acerca">Acerca de Nosotros</a></li>
+                                <li><a href="#">Nuestro Equipo</a></li>
+                                <li><a href="#">Casos de Éxito</a></li>
+                                <li><a href="#">Carreras</a></li>
+                                <li><a href="#">Blog</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-section">
+                            <h4>Soporte</h4>
+                            <ul>
+                                <li><a href="#">Documentación</a></li>
+                                <li><a href="#">Centro de Ayuda</a></li>
+                                <li><a href="#contacto">Contacto</a></li>
+                                <li><a href="#">Estado del Sistema</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-section">
+                            <h4>Contacto</h4>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>info@Edutechsolutions.com</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>+1 (555) 123-4567</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Miami, FL 33101</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-legal">
+                        <p>&copy; 2015-2025 Edutech Solutions LLC. Todos los derechos reservados.</p>
+                        <div class="legal-links">
+                            <a href="#">Políticas de Privacidad</a>
+                            <a href="#">Términos y Condiciones</a>
+                            <a href="#">Cookies</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

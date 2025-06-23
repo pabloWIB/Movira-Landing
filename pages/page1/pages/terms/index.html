@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones - Edutech Solutions LLC</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0066cc;
+            --secondary-color: #00a86b;
+            --accent-color: #ff6b35;
+            --dark-bg: #0a0e1a;
+            --light-bg: #f8fafc;
+            --text-primary: #2d3748;
+            --text-secondary: #718096;
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, #0066cc 0%, #004499 100%);
+            --gradient-secondary: linear-gradient(135deg, #00a86b 0%, #007a4d 100%);
+            --gradient-hero: linear-gradient(135deg, #0a0e1a 0%, #1a202c 50%, #2d3748 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--light-bg);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 14, 26, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo i {
+            color: var(--secondary-color);
+            font-size: 2rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .lang-switch {
+            background: var(--gradient-secondary);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+
+        .lang-switch:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Header Section */
+        .terms-header {
+            background: var(--gradient-hero);
+            padding: 8rem 0 4rem;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .terms-header::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="80" cy="20" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="20" cy="80" r="1" fill="%23ffffff" opacity="0.05"/><circle cx="80" cy="80" r="1" fill="%23ffffff" opacity="0.05"/></svg>');
+            animation: float 20s infinite linear;
+            z-index: 1;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateX(-50%) translateY(-50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translateX(-50%) translateY(-50%) rotate(360deg);
+            }
+        }
+
+        .terms-header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .terms-header h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .terms-header .header-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .terms-header .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .effective-date {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Main Content */
+        .terms-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .terms-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .terms-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .section-content {
+            line-height: 1.8;
+            color: var(--text-primary);
+        }
+
+        .section-content p {
+            margin-bottom: 1rem;
+        }
+
+        .section-content ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .section-content li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .section-content li::marker {
+            color: var(--secondary-color);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fff4e6 0%, #fef5e7 100%);
+            border-left: 4px solid var(--accent-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .important-notice {
+            background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
+            border-left: 4px solid #ef4444;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .website-info {
+            background: var(--light-bg);
+            padding: 1.5rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+            border: 2px dashed var(--primary-color);
+        }
+
+        .website-info strong {
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .obligations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .obligation-item {
+            background: var(--light-bg);
+            padding: 1rem;
+            border-radius: 10px;
+            border-left: 3px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+
+        .obligation-item:hover {
+            transform: translateX(5px);
+        }
+
+        .legal-info {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 10px 10px 0;
+        }
+
+        .cta-section {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cta-section h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-contact {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 102, 204, 0.3);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-bg);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .footer-section a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--secondary-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a0aec0;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .terms-header h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+            }
+
+            .terms-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .obligations-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fas fa-code"></i>
+                Edutech Solutions
+            </a>
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#acerca" class="nav-link">Acerca de</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+                <li><a href="#login" class="nav-link">Login</a></li>
+                <li><button class="lang-switch">EN</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="terms-header">
+        <div class="terms-header-content">
+            <h1>
+                <div class="header-icon">
+                    <i class="fas fa-file-contract"></i>
+                </div>
+                Términos y Condiciones
+            </h1>
+            <p class="subtitle">Condiciones de uso de nuestros servicios y plataforma</p>
+            <div class="effective-date">
+                <i class="fas fa-calendar-check"></i>
+                Vigencia desde: 18 junio 2025
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="terms-content">
+        <!-- Objeto -->
+        <div class="terms-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                1. Objeto
+            </h2>
+            <div class="section-content">
+                <div class="website-info">
+                    <p>Estas condiciones regulan el uso del sitio <strong>https://edutechsolutionsllc.com/</strong>
+                        (ahora rebrandeado como <strong>Edutech Solutions LLC</strong>) y los servicios asociados
+                        (Tecdu-SGA, consultoría IT, hosting).</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Aceptación -->
+        <div class="terms-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                2. Aceptación
+            </h2>
+            <div class="section-content">
+                <p>Al acceder o utilizar este sitio, aceptas quedar vinculado por estos Términos y nuestra Política de
+                    Privacidad.</p>
+                <div class="highlight-box">
+                    <strong>Importante:</strong> El uso continuado de nuestros servicios constituye la aceptación de
+                    estos términos y cualquier modificación posterior.
+                </div>
+            </div>
+        </div>
+
+        <!-- Acceso y uso -->
+        <div class="terms-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-desktop"></i>
+                </div>
+                3. Acceso y uso
+            </h2>
+            <div class="section-content">
+                <div class="obligations-grid">
+                    <div class="obligation-item">
+                        <i class="fas fa-check-circle" style="color: var(--secondary-color); margin-right: 0.5rem;"></i>
+                        <strong>Requisitos técnicos:</strong> Navegador actualizado y conexión a Internet estable
+                    </div>
+                    <div class="obligation-item">
+                        <i class="fas fa-ban" style="color: #ef4444; margin-right: 0.5rem;"></i>
+                        <strong>Prohibido:</strong> Uso de métodos automatizados (bots, scrapers) sin autorización
+                    </div>
+                    <div class="obligation-item">
+                        <i class="fas fa-copyright" style="color: var(--accent-color); margin-right: 0.5rem;"></i>
+                        <strong>Propiedad:</strong> El contenido (textos, imágenes, código) es propiedad de Edutech
+                        Solutions LLC
+                    </div>
+                </div>
+                <div class="important-notice">
+                    <strong>Advertencia:</strong> El contenido está protegido por derechos de autor. Cualquier uso no
+                    autorizado puede resultar en acciones legales.
+                </div>
+            </div>
+        </div>
+
+        <!-- Registro de usuarios -->
+        <div class="terms-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                4. Registro de usuarios
+            </h2>
+            <div class="section-content">
+                <ul>
+                    <li>Quien se registre garantiza que la información proporcionada es <strong>exacta y
+                            actual</strong>.</li>
+                    <li>Eres responsable de mantener la <strong>confidencialidad</strong> de tus credenciales.</li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>Tu responsabilidad:</strong> Notifica inmediatamente cualquier uso no autorizado de tu
+                    cuenta a support@edutechsolutionsllc.com
+                </div>
+            </div>
+        </div>
+
+        <!-- Propiedad intelectual -->
+        <div class="terms-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-trademark"></i>
+                </div>
+                5. Propiedad intelectual
+            </h2>
+            <div class="section-content">
+                <ul>
+                    <li><strong>"Edutech Solutions LLC"</strong> y <strong>"Tecdu-SGA"</strong> son marcas registradas.
+                    </li>
+                    <li>Queda prohibida la reproducción, distribución o transformación no autorizada de nuestros
+                        materiales.</li>
+                </ul>
+                <div class="important-notice">
+                    <strong>Protección legal:</strong> Nuestras marcas y contenidos están protegidos por las leyes de
+                    propiedad intelectual de Estados Unidos e internacionales.
+                </div>
+            </div>
+        </div>
+
+        <!-- Precios y pagos -->
+        <div class="terms-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                6. Precios y pagos
+            </h2>
+            <div class="section-content">
+                <ul>
+                    <li>Los servicios de pago se facturan conforme al <strong>contrato suscrito</strong>.</li>
+                    <li>En caso de impago, podremos <strong>suspender temporalmente</strong> el acceso sin previo aviso.
+                    </li>
+                </ul>
+                <div class="highlight-box">
+                    <strong>Política de pagos:</strong> Los pagos deben realizarse según los términos específicos de
+                    cada contrato de servicio.
+                </div>
+            </div>
+        </div>
+
+        <!-- Responsabilidades y exenciones -->
+        <div class="terms-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                7. Responsabilidades y exenciones
+            </h2>
+            <div class="section-content">
+                <ul>
+                    <li>Prestamos nuestros servicios <strong>"tal cual"</strong> y no garantizamos ausencia de errores.
+                    </li>
+                    <li>No nos responsabilizamos por daños indirectos, lucro cesante o pérdida de datos.</li>
+                </ul>
+                <div class="important-notice">
+                    <strong>Limitación de responsabilidad:</strong> Nuestra responsabilidad se limita al valor pagado
+                    por los servicios en los últimos 12 meses.
+                </div>
+            </div>
+        </div>
+
+        <!-- Modificaciones -->
+        <div class="terms-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-edit"></i>
+                </div>
+                8. Modificaciones
+            </h2>
+            <div class="section-content">
+                <p>Podemos actualizar estos Términos: informaremos con al menos <strong>15 días de anticipación</strong>
+                    por email o anuncio en el sitio.</p>
+                <div class="highlight-box">
+                    <strong>Notificación de cambios:</strong> Te enviaremos un correo electrónico a la dirección
+                    registrada en tu cuenta.
+                </div>
+            </div>
+        </div>
+
+        <!-- Duración y terminación -->
+        <div class="terms-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-hourglass-end"></i>
+                </div>
+                9. Duración y terminación
+            </h2>
+            <div class="section-content">
+                <ul>
+                    <li>Vigencia <strong>indefinida</strong> desde la fecha de aceptación.</li>
+                    <li>Edutech Solutions LLC podrá rescindir el acceso si detecta usos <strong>fraudulentos</strong> o
+                        contrarios a la ley.</li>
+                </ul>
+                <div class="important-notice">
+                    <strong>Terminación inmediata:</strong> Nos reservamos el derecho de suspender servicios por
+                    violaciones graves de estos términos.
+                </div>
+            </div>
+        </div>
+
+        <!-- Ley aplicable y jurisdicción -->
+        <div class="terms-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-gavel"></i>
+                </div>
+                10. Ley aplicable y jurisdicción
+            </h2>
+            <div class="section-content">
+                <div class="legal-info">
+                    <ul>
+                        <li>Se regirá por las <strong>leyes del Estado de Wyoming, EE.UU.</strong></li>
+                        <li>Cualquier controversia se someterá a los <strong>tribunales competentes de Sheridan,
+                                WY</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contacto -->
+        <div class="terms-card">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                11. Contacto
+            </h2>
+            <div class="section-content">
+                <p>Para dudas sobre estos Términos, escríbenos a <strong><a
+                            href="mailto:support@edutechsolutionsllc.com"
+                            style="color: var(--primary-color);">support@edutechsolutionsllc.com</a></strong>.</p>
+                <div class="highlight-box">
+                    <strong>Tiempo de respuesta:</strong> Respondemos consultas sobre términos y condiciones en un plazo
+                    máximo de 48 horas laborables.
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <h3>¿Necesitas aclarar algún término o condición?</h3>
+            <p>Nuestro equipo legal está disponible para resolver tus dudas sobre estos términos.</p>
+            <a href="mailto:support@edutechsolutionsllc.com" class="btn-contact">
+                <i class="fas fa-comments"></i>
+                Consultar términos
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Edutech Solutions</h3>
+                <p style="color: #cbd5e0; margin-bottom: 1rem;">Tu aliado en transformación digital. Desarrollamos
+                    software a medida que impulsa el crecimiento de tu negocio.</p>
+                <div style="display: flex; gap: 1rem;">
+                    <a href="#" style="font-size: 1.5rem; color: var(--secondary-color);"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="#" style="font-size: 1.5rem; color: var(--secondary-color);"><i
+                            class="fab fa-twitter"></i></a>
+                    <a href="#" style="font-size: 1.5rem; color: var(--secondary-color);"><i
+                            class="fab fa-github"></i></a>
+                    <a href="#" style="font-size: 1.5rem; color: var(--secondary-color);"><i
+                            class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>Servicios</h3>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Desarrollo Web & APIs</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Aplicaciones Móviles</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Cloud & DevOps</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#">SGA - Tecdu</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Consultoría IT</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Empresa</h3>
+                <ul style="list-style: none;">
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Acerca de Nosotros</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Nuestro Equipo</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Casos de Éxito</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Carreras</a></li>
+                    <li style="margin-bottom: 0.5rem;"><a href="#">Blog</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <div style="color: #cbd5e0;">
+                    <p style="margin-bottom: 0.5rem;"><i class="fas fa-envelope"></i> support@edutechsolutionsllc.com
+                    </p>
+                    <p style="margin-bottom: 0.5rem;"><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p style="margin-bottom: 0.5rem;"><i class="fas fa-map-marker-alt"></i> Sheridan, WY 82801, USA</p>
+                    <p style="margin-bottom: 1rem;"><i class="fas fa-clock"></i> Lun-Vie: 9AM-6PM MST</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Edutech Solutions LLC. Todos los derechos reservados.</p>
+            <div style="margin-top: 0.5rem;">
+                <a href="#" style="margin: 0 1rem;">Políticas de Privacidad</a>
+                <a href="#" style="margin: 0 1rem;">Términos y Condiciones</a>
+                <a href="#" style="margin: 0 1rem;">Cookies</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

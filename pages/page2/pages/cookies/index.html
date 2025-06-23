@@ -1,0 +1,1479 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Políticas de Privacidad - Edutech Solutions LLC</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1e40af;
+            --secondary-blue: #3b82f6;
+            --accent-blue: #60a5fa;
+            --dark-navy: #1e293b;
+            --light-navy: #334155;
+            --soft-gray: #64748b;
+            --light-gray: #f1f5f9;
+            --pure-white: #ffffff;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-muted: #94a3b8;
+            --border-light: #e2e8f0;
+            --border-medium: #cbd5e1;
+            --success-green: #059669;
+            --gradient-subtle: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            --gradient-blue: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--pure-white);
+            font-feature-settings: 'kern' 1, 'liga' 1, 'calt' 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid var(--border-light);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: var(--shadow-md);
+            border-bottom-color: var(--border-medium);
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            transition: transform 0.2s ease;
+        }
+
+        .logo:hover {
+            transform: translateY(-1px);
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-md);
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -0.025em;
+        }
+
+        .logo-subtitle {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-top: -0.25rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-blue);
+            background: var(--light-gray);
+        }
+
+        .nav-link.active {
+            color: var(--primary-blue);
+            background: rgba(30, 64, 175, 0.1);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .lang-selector {
+            background: transparent;
+            border: 1.5px solid var(--border-medium);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-selector:hover {
+            border-color: var(--primary-blue);
+            color: var(--primary-blue);
+        }
+
+        .btn-nav-login {
+            background: var(--gradient-blue);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .btn-nav-login:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-navy);
+            color: var(--pure-white);
+        }
+
+        .footer-main {
+            padding: 4rem 0;
+            margin: 0 auto;
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            place-content: center;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 4rem;
+        }
+
+        /* Company section */
+        .footer-brand {
+            max-width: 350px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            text-decoration: none;
+        }
+
+        .footer-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+
+        .footer-logo-text {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--pure-white);
+            letter-spacing: -0.025em;
+        }
+
+        .footer-description {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .social-link:hover {
+            background: var(--secondary-blue);
+            color: white;
+        }
+
+        /* Footer sections */
+        .footer-section h3 {
+            color: var(--pure-white);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Contact info */
+        .contact-info {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .contact-info p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-info strong {
+            color: var(--pure-white);
+        }
+
+        /* Footer bottom */
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem 0;
+        }
+
+        .footer-bottom-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-copyright {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-legal a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-legal a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+
+            .footer-brand {
+                grid-column: 1 / -1;
+                max-width: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-main {
+                padding: 3rem 0;
+            }
+
+            .footer-bottom-container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .footer-legal {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
+            }
+        }
+
+
+        /* Header */
+        .cookie-header {
+            padding: 8rem 0 4rem;
+            background:
+                radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(30, 64, 175, 0.05) 0%, transparent 50%),
+                var(--pure-white);
+            text-align: center;
+            position: relative;
+        }
+
+        .cookie-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 1px 1px, rgba(30, 64, 175, 0.15) 1px, transparent 0);
+            background-size: 50px 50px;
+            opacity: 0.3;
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(30, 64, 175, 0.1);
+            color: var(--primary-blue);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(30, 64, 175, 0.2);
+        }
+
+        .header-title {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .header-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .last-updated {
+            display: inline-block;
+            background: var(--light-gray);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--border-light);
+        }
+
+        /* Main Content */
+        .cookie-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            background: var(--pure-white);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .section-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .section-content {
+            color: var(--text-primary);
+            line-height: 1.7;
+        }
+
+        .section-content p {
+            margin-bottom: 1rem;
+        }
+
+        .section-content ul,
+        .section-content ol {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+
+        .section-content li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .section-content strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        /* Tables */
+        .cookie-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            background: var(--pure-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border-light);
+        }
+
+        .cookie-table th {
+            background: var(--gradient-blue);
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .cookie-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 0.9rem;
+        }
+
+        .cookie-table tr:nth-child(even) {
+            background: var(--light-gray);
+        }
+
+        .cookie-table tr:hover {
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .cookie-table code {
+            background: rgba(30, 64, 175, 0.1);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            color: var(--primary-blue);
+            font-size: 0.85rem;
+        }
+
+        /* Browser Instructions */
+        .browser-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .browser-card {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--secondary-blue);
+            transition: all 0.3s ease;
+        }
+
+        .browser-card:hover {
+            transform: translateX(3px);
+            background: rgba(59, 130, 246, 0.05);
+        }
+
+        .browser-card h4 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .browser-card i {
+            font-size: 1.2rem;
+            color: var(--secondary-blue);
+        }
+
+        .browser-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        /* Important notes */
+        .important-note {
+            background: rgba(59, 130, 246, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .important-note p {
+            margin-bottom: 0;
+            color: var(--primary-blue);
+            font-weight: 500;
+        }
+
+        .consent-note {
+            background: rgba(34, 197, 94, 0.05);
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .consent-note p {
+            margin-bottom: 0;
+            color: var(--success-green);
+            font-weight: 500;
+        }
+
+        /* Contact info */
+        .contact-info {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-blue);
+            margin: 1.5rem 0;
+        }
+
+        .contact-info strong {
+            color: var(--primary-blue);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--gradient-blue);
+            color: white;
+            padding: 3rem;
+            border-radius: 20px;
+            text-align: center;
+            margin: 3rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.1) 1px, transparent 0);
+            background-size: 30px 30px;
+            opacity: 0.5;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-contact {
+            background: white;
+            color: var(--primary-blue);
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-contact:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Email link styling */
+        a[href^="mailto"] {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a[href^="mailto"]:hover {
+            text-decoration: underline;
+        }
+
+        /* External link styling */
+        a[href^="http"] {
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a[href^="http"]:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cookie-header {
+                padding: 6rem 0 3rem;
+            }
+
+            .cookie-content {
+                padding: 3rem 1rem;
+            }
+
+            .section {
+                padding: 2rem 1.5rem;
+            }
+
+            .browser-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cookie-table {
+                font-size: 0.8rem;
+            }
+
+            .cookie-table th,
+            .cookie-table td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .cta-section {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">E</div>
+                <div>
+                    <div class="logo-text">Edutech Solutions</div>
+                    <div class="logo-subtitle">Excellence in Technology</div>
+                </div>
+            </a>
+
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#acerca" class="nav-link">Acerca de</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <select class="lang-selector">
+                    <option value="es">ES</option>
+                    <option value="en">EN</option>
+                </select>
+                <a href="#login" class="btn-nav-login">
+                    <i class="fas fa-user"></i>
+                    Acceder
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <section class="cookie-header">
+        <div class="header-content">
+            <div class="header-badge">
+                <i class="fas fa-cookie-bite"></i>
+                Gestión de Cookies
+            </div>
+            <h1 class="header-title">Política de Cookies</h1>
+            <p class="header-subtitle">
+                Información transparente sobre el uso de cookies y tecnologías similares
+            </p>
+            <div class="last-updated">
+                <i class="fas fa-calendar-alt"></i>
+                Última actualización: 18 junio 2025
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="cookie-content">
+        <!-- Section 1: Introducción -->
+        <div class="section">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-info-circle"></i>
+                </div>
+                1. Introducción
+            </h2>
+            <div class="section-content">
+                <p>Esta Política de Cookies explica cómo <strong>Etech Solutions LLC</strong> utiliza "cookies" y
+                    tecnologías similares en su sitio web y aplicaciones (en adelante, el "Sitio"). El objetivo es
+                    ofrecerte información clara sobre qué datos recogemos, con qué finalidad y cómo puedes gestionarlos.
+                </p>
+                <div class="important-note">
+                    <p><strong>Transparencia total:</strong> Creemos en la transparencia absoluta sobre cómo utilizamos
+                        las cookies para mejorar tu experiencia de navegación.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: ¿Qué son las cookies? -->
+        <div class="section">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                2. ¿Qué son las cookies?
+            </h2>
+            <div class="section-content">
+                <p>Las cookies son pequeños archivos de texto que se almacenan en tu dispositivo cuando visitas un sitio
+                    web. Permiten al Sitio recordar tus acciones y preferencias (por ejemplo, idioma o inicio de sesión)
+                    durante un tiempo determinado, para mejorar tu experiencia de usuario.</p>
+                <div class="important-note">
+                    <p><strong>En términos simples:</strong> Las cookies son como pequeñas notas que nuestro sitio web
+                        deja en tu navegador para recordar cosas sobre ti y personalizar tu experiencia.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Tipos de cookies -->
+        <div class="section">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-layer-group"></i>
+                </div>
+                3. Tipos de cookies que utilizamos
+            </h2>
+            <div class="section-content">
+                <table class="cookie-table">
+                    <thead>
+                        <tr>
+                            <th>Categoría</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Cookies estrictamente necesarias</strong></td>
+                            <td>Imprescindibles para el funcionamiento básico del Sitio (gestión de sesión,
+                                autenticación).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cookies de rendimiento/analítica</strong></td>
+                            <td>Recogen datos anónimos sobre tu uso del Sitio (páginas vistas, tiempo de visita).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cookies funcionales</strong></td>
+                            <td>Guardan tus preferencias (idioma, región, diseño), para personalizar el Sitio.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cookies de publicidad/marketing</strong></td>
+                            <td>Permiten mostrarte anuncios relevantes y medir la eficacia de las campañas.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Section 4: Listado detallado -->
+        <div class="section">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-list-ul"></i>
+                </div>
+                4. Listado detallado de cookies
+            </h2>
+            <div class="section-content">
+                <table class="cookie-table">
+                    <thead>
+                        <tr>
+                            <th>Nombre de cookie</th>
+                            <th>Proveedor</th>
+                            <th>Finalidad</th>
+                            <th>Caducidad</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>_ga</code></td>
+                            <td>.edutechsolutionsllc.com</td>
+                            <td>Google Analytics: distinguir usuarios únicos</td>
+                            <td>2 años</td>
+                        </tr>
+                        <tr>
+                            <td><code>_gid</code></td>
+                            <td>.edutechsolutionsllc.com</td>
+                            <td>Google Analytics: distinguir sesiones</td>
+                            <td>24 horas</td>
+                        </tr>
+                        <tr>
+                            <td><code>ASP.NET_SessionId</code></td>
+                            <td>edutechsolutionsllc.com</td>
+                            <td>Mantener tu sesión iniciada</td>
+                            <td>Sesión</td>
+                        </tr>
+                        <tr>
+                            <td><code>cookie_consent</code></td>
+                            <td>edutechsolutionsllc.com</td>
+                            <td>Recordar tu decisión sobre banner de cookies</td>
+                            <td>1 año</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="important-note">
+                    <p><strong>Nota:</strong> Esta tabla es un ejemplo basado en configuraciones típicas. Revisa tu
+                        configuración real de cookies y actualiza los nombres, finalidades y plazos según tu
+                        implementación específica.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Gestión de cookies -->
+        <div class="section">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                5. Cómo gestionar o desactivar cookies
+            </h2>
+            <div class="section-content">
+                <p>Tienes varias opciones para controlar las cookies:</p>
+
+                <h4 style="color: var(--primary-blue); margin: 1.5rem 0 1rem 0;">1. Desde tu navegador</h4>
+                <div class="browser-grid">
+                    <div class="browser-card">
+                        <h4><i class="fab fa-chrome"></i> Chrome</h4>
+                        <p>Menú ⋮ → Configuración → Privacidad y seguridad → Cookies y otros datos de sitios.</p>
+                    </div>
+                    <div class="browser-card">
+                        <h4><i class="fab fa-firefox"></i> Firefox</h4>
+                        <p>Menú ☰ → Opciones → Privacidad & Seguridad → Cookies y datos del sitio.</p>
+                    </div>
+                    <div class="browser-card">
+                        <h4><i class="fab fa-edge"></i> Edge</h4>
+                        <p>Menú ⋮ → Configuración → Cookies y permisos de sitio.</p>
+                    </div>
+                    <div class="browser-card">
+                        <h4><i class="fab fa-safari"></i> Safari</h4>
+                        <p>Preferencias → Privacidad → Gestionar datos de sitios web.</p>
+                    </div>
+                </div>
+
+                <h4 style="color: var(--primary-blue); margin: 1.5rem 0 1rem 0;">2. Banner de cookies</h4>
+                <p>Al ingresar al Sitio, utiliza las opciones del banner para aceptar o rechazar categorías de cookies.
+                </p>
+
+                <h4 style="color: var(--primary-blue); margin: 1.5rem 0 1rem 0;">3. Herramientas externas</h4>
+                <p>Servicios como <a href="https://www.youronlinechoices.com/" target="_blank">YourOnlineChoices</a> o
+                    <a href="https://www.networkadvertising.org/" target="_blank">Network Advertising Initiative</a>
+                    para gestionar cookies publicitarias.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section 6: Consentimiento -->
+        <div class="section">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                6. Consentimiento y cambios
+            </h2>
+            <div class="section-content">
+                <div class="consent-note">
+                    <p><strong>Tu consentimiento:</strong> Al continuar navegando en nuestro Sitio sin cambiar la
+                        configuración de tu navegador o hacer clic en "Rechazar cookies" en nuestro banner, aceptas el
+                        uso de cookies de acuerdo con esta Política.</p>
+                </div>
+                <p>Podemos actualizar esta Política en cualquier momento. La fecha de "Última actualización" indica su
+                    vigencia. Te recomendamos revisarla periódicamente.</p>
+                <div class="important-note">
+                    <p><strong>Actualizaciones:</strong> Te notificaremos sobre cambios importantes en nuestra política
+                        de cookies a través del banner de cookies o por email si tienes una cuenta registrada.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7: Contacto -->
+        <div class="section">
+            <h2 class="section-title">
+                <div class="section-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                7. Contacto
+            </h2>
+            <div class="section-content">
+                <p>Si tienes preguntas o deseas más información, puedes escribirnos a:</p>
+                <div class="contact-info">
+                    <p><strong>Correo:</strong> <a
+                            href="mailto:support@edutechsolutionsllc.com">support@edutechsolutionsllc.com</a></p>
+                    <p style="margin-top: 0.5rem;"><strong>Tiempo de respuesta:</strong> Respondemos consultas sobre
+                        cookies en un plazo máximo de 24 horas laborables.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="cta-section">
+            <div class="cta-content">
+                <h3>¿Necesitas ayuda con la configuración de cookies?</h3>
+                <p>Nuestro equipo técnico puede ayudarte a configurar tus preferencias de cookies de manera óptima.</p>
+                <a href="mailto:support@edutechsolutionsllc.com" class="btn-contact">
+                    <i class="fas fa-life-ring"></i>
+                    Obtener Ayuda
+                </a>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-main">
+            <div class="footer-container">
+                <div class="footer-grid">
+                    <!-- Company Info -->
+                    <div class="footer-brand">
+                        <a href="#" class="footer-logo">
+                            <div class="footer-logo-icon">E</div>
+                            <div class="footer-logo-text">Edutech Solutions</div>
+                        </a>
+                        <p class="footer-description">
+                            Transformamos ideas en soluciones digitales innovadoras. Desarrollamos software a medida,
+                            consultoría IT y plataformas SaaS que impulsan el crecimiento empresarial.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="#" class="social-link">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Services -->
+                    <div class="footer-section">
+                        <h3>Servicios</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Desarrollo Web & APIs</a></li>
+                            <li><a href="#">Aplicaciones Móviles</a></li>
+                            <li><a href="#">Cloud & DevOps</a></li>
+                            <li><a href="#">SGA - Tecdu</a></li>
+                            <li><a href="#">Consultoría IT</a></li>
+                            <li><a href="#">Soporte Técnico</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Company -->
+                    <div class="footer-section">
+                        <h3>Empresa</h3>
+                        <ul class="footer-links">
+                            <li><a href="#">Acerca de Nosotros</a></li>
+                            <li><a href="#">Nuestro Equipo</a></li>
+                            <li><a href="#">Casos de Éxito</a></li>
+                            <li><a href="#">Carreras</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div class="footer-section">
+                        <h3>Contacto</h3>
+                        <div class="contact-info">
+                            <p><strong>Email:</strong><br>
+                                support@edutechsolutionsllc.com</p>
+
+                            <p><strong>Teléfono:</strong><br>
+                                +1 (555) 123-4567</p>
+
+                            <p><strong>Dirección:</strong><br>
+                                30 N Gould St Ste N<br>
+                                Sheridan, WY 82801, USA</p>
+
+                            <p><strong>Horario:</strong><br>
+                                Lun-Vie: 9AM-6PM MST</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-container">
+                <div class="footer-copyright">
+                    © 2025 Edutech Solutions LLC. Todos los derechos reservados.
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Políticas de Privacidad</a>
+                    <a href="#">Términos y Condiciones</a>
+                    <a href="#">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced navbar scroll effect
+        // let lastScrollY = window.scrollY; // Removed duplicate declaration
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            lastScrollY = currentScrollY;
+        });
+
+        // Enhanced counter animation with easing
+        function animateCounters() {
+            const counters = document.querySelectorAll('.metric-number');
+
+            const easeOutQuart = t => 1 - (--t) * t * t * t;
+
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const start = performance.now();
+
+                function updateCounter(now) {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easedProgress = easeOutQuart(progress);
+                    const current = Math.floor(easedProgress * target);
+
+                    counter.textContent = current + (target === 99 ? '%' : '+');
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    }
+                }
+
+                requestAnimationFrame(updateCounter);
+            });
+        }
+
+        // Intersection Observer for animations
+        // (Removed duplicate observerOptions and observer declarations)
+        // Start observing
+        // (Removed duplicate heroMetrics declaration)
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Language selector functionality
+        document.querySelector('.lang-selector').addEventListener('change', function () {
+            const selectedLang = this.value;
+            console.log('Language changed to:', selectedLang);
+            // Implement language switching logic here
+        });
+
+        // Active navigation link highlighting
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavLink);
+
+        // Parallax effect for floating cards
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const parallaxElements = document.querySelectorAll('.floating-card');
+
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                const yPos = -(scrolled * speed);
+                element.style.transform += ` translateY(${yPos}px)`;
+            });
+        });
+
+        // Enhanced navbar scroll effect
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const currentScrollY = window.scrollY;
+
+            if (currentScrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            lastScrollY = currentScrollY;
+        });
+
+        // Enhanced counter animation with easing
+        function animateCounters() {
+            const counters = document.querySelectorAll('.metric-number');
+
+            const easeOutQuart = t => 1 - (--t) * t * t * t;
+
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const duration = 2000;
+                const start = performance.now();
+
+                function updateCounter(now) {
+                    const elapsed = now - start;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easedProgress = easeOutQuart(progress);
+                    const current = Math.floor(easedProgress * target);
+
+                    counter.textContent = current + (target === 99 ? '%' : '+');
+
+                    if (progress < 1) {
+                        requestAnimationFrame(updateCounter);
+                    }
+                }
+
+                requestAnimationFrame(updateCounter);
+            });
+        }
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && entry.target.classList.contains('hero-metrics')) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Start observing
+        const heroMetrics = document.querySelector('.hero-metrics');
+        if (heroMetrics) {
+            observer.observe(heroMetrics);
+        }
+
+        // FAQ Accordion functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+
+        // Contact form submission
+        document.querySelector('.contact-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            // Simulate form submission
+            const submitBtn = this.querySelector('.btn-submit');
+            const originalText = submitBtn.innerHTML;
+
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            submitBtn.disabled = true;
+
+            // Simulate API call
+            setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-check"></i> Enviado Exitosamente';
+                submitBtn.style.background = '#10b981';
+
+                // Reset form after 2 seconds
+                setTimeout(() => {
+                    this.reset();
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 2000);
+            }, 1500);
+
+            console.log('Form submitted:', data);
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const navHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.offsetTop - navHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Language selector functionality
+        document.querySelector('.lang-selector').addEventListener('change', function () {
+            const selectedLang = this.value;
+            console.log('Language changed to:', selectedLang);
+            // Implement language switching logic here
+        });
+
+        // Active navigation link highlighting
+        function updateActiveNavLink() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', updateActiveNavLink);
+
+        // Parallax effect for floating cards (lighter version)
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const parallaxElements = document.querySelectorAll('.floating-card');
+
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.1 + (index * 0.05);
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+
+        // Service card hover effects
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-8px)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Initialize all animations on page load
+        document.addEventListener('DOMContentLoaded', function () {
+            // Add entrance animations to elements
+            const animatedElements = document.querySelectorAll('.section-badge, .section-title, .service-card, .why-card, .testimonial-card');
+
+            const animationObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                animationObserver.observe(el);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
