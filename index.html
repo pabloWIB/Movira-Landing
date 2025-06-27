@@ -1,54 +1,219 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es" data-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #f4f6fb;
-            color: #222;
-            margin: 0;
-            padding: 0;
-        }
-        h1 {
-            text-align: center;
-            margin-top: 40px;
-            color: #2a4d69;
-        }
-        p {
-            text-align: center;
-            font-size: 1.2em;
-            margin-bottom: 40px;
-        }
-        .links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-        .links a {
-            text-decoration: none;
-            background: #4fc3f7;
-            color: #fff;
-            padding: 12px 28px;
-            border-radius: 6px;
-            font-weight: 500;
-            transition: background 0.2s;
-            box-shadow: 0 2px 8px rgba(44, 62, 80, 0.08);
-        }
-        .links a:hover {
-            background: #1976d2;
-        }
-    </style>
+    <title>EduTech Solutions - Excellence in Technology</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
-    <h1>Welcome to My Page</h1>
-    <p>This is a simple HTML document.</p>
-    <div class="links">
-        <a href="pages/page1/index.html">Page 1</a>
-        <a href="pages/page2/index.html">Page 2</a>
-        <a href="pages/page3/index.html">Page 3</a>
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <!-- Logo -->
+            <a href="#inicio" class="logo">
+                <div class="logo-icon">E</div>
+                <div>
+                    <div class="logo-text">EduTech Solutions</div>
+                    <div class="logo-subtitle">Excellence in Technology</div>
+                </div>
+            </a>
+
+            <!-- Menú principal (Desktop) -->
+            <ul class="nav-menu">
+                <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="#soporte" class="nav-link">Soporte</a></li>
+            </ul>
+
+            <!-- Acciones de navegación (Desktop) -->
+            <div class="nav-actions">
+
+                <!-- Menú principal (Desktop) -->
+                <ul class="nav-menu">
+                    <li><a href="#soporte" class="nav-link">Inglés</a></li>
+                </ul>
+
+                <!-- Toggle de tema -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+                    <i class="fas fa-sun" id="themeIcon"></i>
+                </button>
+
+                <!-- Botón de login -->
+                <a href="#portal" class="btn-nav-login">
+                    <i class="fas fa-user"></i>
+                    Ingresa
+                </a>
+            </div>
+
+            <!-- Botón hamburguesa móvil -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Abrir menú">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+    </nav>
+
+    <!-- OVERLAY MÓVIL -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- MENÚ MÓVIL -->
+    <div class="mobile-menu" id="mobileMenu">
+        <!-- Header del menú móvil -->
+        <div class="mobile-menu-header">
+            <div class="mobile-logo">
+                <div class="logo-icon">E</div>
+                <div>
+                    <div class="logo-text">EduTech</div>
+                    <div class="logo-subtitle">Excellence in Tech</div>
+                </div>
+            </div>
+            <button class="mobile-close" id="mobileClose" aria-label="Cerrar menú">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <!-- Contenido del menú móvil -->
+        <div class="mobile-menu-content">
+            <!-- Navegación móvil -->
+            <ul class="mobile-nav-menu">
+                <li><a href="" class="mobile-nav-link active">Inicio</a></li>
+                <li><a href="" class="mobile-nav-link">Servicios</a></li>
+                <li><a href="" class="mobile-nav-link">Nosotros</a></li>
+                <li><a href="" class="mobile-nav-link">Soporte</a></li>
+                <li><a href="" class="mobile-nav-link">Ingles</a></li>
+            </ul>
+
+            <!-- Acciones móviles -->
+            <div class="mobile-actions">
+                <div class="mobile-controls">
+                    <button class="theme-toggle" id="mobileThemeToggle" aria-label="Cambiar tema">
+                        <i class="fas fa-sun" id="mobileThemeIcon"></i>
+                    </button>
+                    <!-- Botón de login -->
+                    <a href="#portal" class="btn-nav-login">
+                        <i class="fas fa-user"></i>
+                        Ingresa
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-container">
+            <!-- Contenido del Hero -->
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-award"></i>
+                    Líderes en Transformación Digital
+                </div>
+
+                <h1 class="hero-title">
+                    Tu Aliado en<br>
+                    <span class="highlight">Transformación Digital</span>
+                </h1>
+
+                <p class="hero-subtitle">
+                    Diseñamos y desarrollamos software a la medida, combinando innovación tecnológica de vanguardia con
+                    un equipo de expertos para impulsar el crecimiento exponencial de tu negocio.
+                </p>
+
+                <div class="hero-metrics">
+                    <div class="metric-item">
+                        <span class="metric-number" data-target="10">10</span>
+                        <span class="metric-label">Años de Experiencia</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-number" data-target="500">500</span>
+                        <span class="metric-label">Proyectos Exitosos</span>
+                    </div>
+                    <div class="metric-item">
+                        <span class="metric-number" data-target="99">99</span>
+                        <span class="metric-label">% Satisfacción</span>
+                    </div>
+                </div>
+
+                <div class="hero-actions">
+                    <a href="#servicios" class="btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        Descubrir Servicios
+                    </a>
+                    <a href="#soporte" class="btn-secondary">
+                        <i class="fas fa-calendar-alt"></i>
+                        Agendar Consulta
+                    </a>
+                </div>
+            </div>
+
+            <!-- Visual del Hero -->
+            <div class="hero-visual">
+                <div class="visual-container">
+                    <!-- Card 1: Analytics -->
+                    <div class="floating-card card-1">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="card-title">Analytics Dashboard</div>
+                        </div>
+                        <div class="card-content">Performance en tiempo real</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill"></div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Mobile -->
+                    <div class="floating-card card-2">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="card-title">Mobile Solutions</div>
+                        </div>
+                        <div class="card-content">Apps multiplataforma</div>
+                        <div class="mini-chart">
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                            <div class="chart-bar"></div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Cloud -->
+                    <div class="floating-card card-3">
+                        <div class="card-header">
+                            <div class="card-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <div class="card-title">Cloud Infrastructure</div>
+                        </div>
+                        <div class="card-content">Escalabilidad garantizada</div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="animation-delay: 1s;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Logo central -->
+                    <div class="center-logo">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JAVASCRIPT -->
+    <script src="js/script.js"></script>
 </body>
+
 </html>
