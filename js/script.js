@@ -610,3 +610,224 @@ scheduleWork(() => {
     // Inicializar analytics, widgets, etc.
     console.log('🚀 EduTech Navigation System loaded successfully');
 });
+
+class InfiniteCarousel {
+    constructor() {
+        this.slider = document.getElementById('testimonialsSlider');
+        this.slides = document.querySelectorAll('.testimonial-slide');
+        this.indicators = document.querySelectorAll('.indicator');
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        this.progressFill = document.getElementById('progressFill');
+
+        this.currentIndex = 0;
+        this.totalSlides = this.slides.length;
+        this.autoPlayTimer = null;
+        this.progressTimer = null;
+        this.isTransitioning = false;
+
+        this.init();
+    }
+
+    init() {
+        this.setupEventListeners();
+        this.updateDisplay();
+        this.startAutoPlay();
+    }
+
+    setupEventListeners() {
+        this.nextBtn.addEventListener('click', () => this.next());
+        this.prevBtn.addEventListener('click', () => this.prev());
+
+        this.indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => this.goToSlide(index));
+        });
+
+        this.slider.addEventListener('mouseenter', () => this.pauseAutoPlay());
+        this.slider.addEventListener('mouseleave', () => this.startAutoPlay());
+
+        // Touch events for mobile
+        let startX = 0;
+        this.slider.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        this.slider.addEventListener('touchend', (e) => {
+            const endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    this.next();
+                } else {
+                    this.prev();
+                }
+            }
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') this.prev();
+            if (e.key === 'ArrowRight') this.next();
+        });
+    }
+
+    next() {
+        if (this.isTransitioning) return;
+        this.currentIndex = (this.currentIndex + 1) % this.totalSlides;
+        this.updateDisplay();
+        this.restartAutoPlay();
+    }
+
+    prev() {
+        if (this.isTransitioning) return;
+        this.currentIndex = (this.currentIndex - 1 + this.totalSlides) % this.totalSlides;
+        this.updateDisplay();
+        this.restartAutoPlay();
+    }
+
+    goToSlide(index) {
+        if (this.isTransitioning || index === this.currentIndex) return;
+        this.currentIndex = index;
+        this.updateDisplay();
+        this.restartAutoPlay();
+    }
+
+    updateDisplay() {
+        this.isTransitioning = true;
+
+        // Move slider
+        const translateX = -this.currentIndex * 100;
+        this.slider.style.transform = `translateX(${translateX}%)`;
+
+        // Update indicators
+        this.indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === this.currentIndex);
+        });
+
+        // Update active card
+        this.slides.forEach((slide, index) => {
+            const card = slide.querySelector('.testimonial-card');
+            card.classList.toggle('active', index === this.currentIndex);
+        });
+
+        // Reset transition flag after animation completes
+        setTimeout(() => {
+            this.isTransitioning = false;
+        }, 600);
+    }
+
+    startAutoPlay() {
+        this.clearTimers();
+
+        this.autoPlayTimer = setInterval(() => {
+            this.next();
+        }, 5000);
+
+        this.startProgressBar();
+    }
+
+    pauseAutoPlay() {
+        this.clearTimers();
+    }
+
+    restartAutoPlay() {
+        this.clearTimers();
+        setTimeout(() => this.startAutoPlay(), 100);
+    }
+
+    startProgressBar() {
+        let progress = 0;
+        this.progressTimer = setInterval(() => {
+            progress += 2; // 2% every 100ms = 5 seconds total
+            this.progressFill.style.width = `${progress}%`;
+
+            if (progress >= 100) {
+                progress = 0;
+            }
+        }, 100);
+    }
+
+    clearTimers() {
+        if (this.autoPlayTimer) {
+            clearInterval(this.autoPlayTimer);
+            this.autoPlayTimer = null;
+        }
+        if (this.progressTimer) {
+            clearInterval(this.progressTimer);
+            this.progressTimer = null;
+        }
+        this.progressFill.style.width = '0%';
+    }
+}
+
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', () => {
+    new InfiniteCarousel();
+});
+
+class FAQAccordion {
+    constructor() {
+        this.faqItems = document.querySelectorAll('.faq-item');
+        this.init();
+    }
+
+    init() {
+        this.faqItems.forEach((item, index) => {
+            const question = item.querySelector('.faq-question');
+
+            question.addEventListener('click', () => {
+                this.toggleItem(item, index);
+            });
+
+            item.style.animationDelay = `${index * 0.1}s`;
+            item.style.animation = 'fadeInUp 0.6s ease-out both';
+        });
+    }
+
+    toggleItem(clickedItem, clickedIndex) {
+        const isActive = clickedItem.classList.contains('active');
+
+        this.faqItems.forEach((item, index) => {
+            if (item !== clickedItem) {
+                item.classList.remove('active');
+            }
+        });
+
+        if (!isActive) {
+            clickedItem.classList.add('active');
+
+            setTimeout(() => {
+                const answer = clickedItem.querySelector('.faq-answer');
+                answer.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'nearest'
+                });
+            }, 200);
+        }
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    new FAQAccordion();
+});
+
+const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.animation = 'fadeInUp 0.6s ease-out both';
+        }
+    });
+}, observerOptions);
+
+document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach((item, index) => {
+        item.style.animationDelay = `${index * 0.1}s`;
+        observer.observe(item);
+    });
+});
