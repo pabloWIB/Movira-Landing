@@ -1,237 +1,118 @@
-# Edutech Solutions LLC - Website Project
+# Movira-landing
 
-## 📋 Project Overview
+Bilingual marketing site for MOVIRA, a Colombian last-mile network that lets logistics companies absorb order peaks through verified independent drivers instead of buying fleet.
 
-This project is a complete website redesign for **Edutech Solutions LLC** (formerly EduTech Solutions LLC), a software development company specializing in educational technology and custom software solutions. The website showcases their flagship product **Tecdu-SGA** and their comprehensive range of IT services.
+## Description
 
-### 🎯 Project Goals
-- **Rebrand** from "EduTech Solutions LLC" to "Edutech Solutions LLC"
-- Create a modern, responsive website with **bilingual support** (Spanish/English)
-- Showcase **Tecdu-SGA** as the flagship academic management system
-- Implement engaging **tech-focused animations** and microinteractions
-- Prepare design assets for **html.to.design** conversion to Figma
+MOVIRA sells capacity a company does not have to own. Rather than adding vehicles, warehouses and drivers to reach new territory, a logistics business routes its surplus orders and hard-to-cover zones to a network of independent drivers who are already on the road. The site leads with that outcome — *widen your coverage without buying a fleet* — and only then explains the mechanism.
 
-## 🏗️ Project Structure
+The page runs the argument in a fixed order: how the integration works step by step, what the platform includes, why an external network beats owned assets, the nine questions prospects actually ask, and a single contact route.
+
+Both language versions ship from one stylesheet set and one script set, so a layout change reaches Spanish and English at once and only the copy is duplicated.
+
+Every claim on the page traces back to client-supplied material kept in `docs/fuentes/`. There are no invented metrics, testimonials or customer names anywhere in the markup.
+
+## Tech stack
+
+| Layer | Technology | Role in project |
+|---|---|---|
+| Markup | HTML5 | 5 static pages across two languages |
+| Styling | CSS3 with custom properties | Mobile-first, `min-width` breakpoints at 480 / 768 / 1024 / 1440 |
+| Theming | `data-theme` attribute + `localStorage` | Light and dark, applied before first paint to avoid a flash |
+| Scripting | JavaScript (vanilla, classic scripts) | One entry point plus four modules on a `window.Movira` namespace |
+| Icons | Inline SVG | Hand-written in the markup; no icon library, no CDN |
+| Typography | Inter, from Google Fonts | The only external request the site makes |
+| Build step | None | Files are served exactly as they are committed |
+
+Classic scripts are used deliberately instead of ES modules: they let `index.html` work when opened straight from disk with `file://`, where ES modules are blocked by CORS.
+
+## Project structure
 
 ```
-Edutech-website/
-├── index.html              # Landing page
-├── services.html           # Services overview
-├── about.html             # About us page
-├── contact.html           # Contact form
-├── faq.html               # Frequently asked questions
-├── login.html             # Login portal
+.
+├── index.html                    # Spanish landing page
+├── politica-de-privacidad.html   # Spanish privacy policy
+├── 404.html                      # Not-found page; uses root-relative asset paths
+├── en/
+│   ├── index.html                # English landing page
+│   └── privacy-policy.html       # English privacy policy
 ├── assets/
 │   ├── css/
-│   │   ├── main.css       # Main stylesheet
-│   │   ├── components.css # Component styles
-│   │   └── animations.css # Animation definitions
+│   │   ├── base.css              # Custom properties, reset, typography
+│   │   ├── layout.css            # Containers, header, nav, sections, footer
+│   │   ├── components.css        # Buttons, cards, badges, accordion, panel
+│   │   └── pages/
+│   │       └── legal.css         # Only for the privacy and 404 pages
 │   ├── js/
-│   │   ├── main.js        # Core functionality
-│   │   ├── animations.js  # Animation controllers
-│   │   └── i18n.js        # Internationalization
-│   ├── images/
-│   │   ├── logos/         # Brand logos and variants
-│   │   ├── heroes/        # Hero section images
-│   │   ├── services/      # Service illustrations
-│   │   └── icons/         # UI icons and symbols
-│   └── fonts/             # Custom typography
-├── lang/
-│   ├── es.json           # Spanish translations
-│   └── en.json           # English translations
-└── README.md             # This file
+│   │   ├── main.js               # Entry point; calls each module's init
+│   │   └── modules/
+│   │       ├── theme.js          # Light/dark toggle, persisted
+│   │       ├── mobile-menu.js    # Side menu, scroll lock, focus return
+│   │       ├── faq.js            # Accordion, delegated listener
+│   │       └── year.js           # Current year in the footer
+│   └── icons/
+│       └── favicon.svg           # Site favicon
+├── docs/
+│   ├── auditoria.md              # Inventory of the project before reorganisation
+│   ├── cambios.md                # Change log, grouped by phase
+│   └── fuentes/                  # Client-supplied source documents
+│       ├── faq-movira.pdf        # Source for the FAQ section
+│       └── politica-de-privacidad-movira.pdf   # Source for the privacy pages
+├── robots.txt
+├── sitemap.xml
+├── .gitignore
+├── LICENSE
+└── README.md
 ```
 
-## 🚀 Key Features
+`404.html` is the one file that links its assets from the site root (`/assets/...`). The server returns it for any address that does not resolve, including nested ones, where a relative path would break.
 
-### 💼 Business Focus
-- **Academic Management System (Tecdu-SGA)**: CACES-compliant platform for Ecuadorian higher education
-- **Full-Stack Development**: Modern web applications and APIs
-- **Mobile Applications**: Native iOS/Android and hybrid solutions
-- **Cloud & DevOps**: Azure, AWS, GCP infrastructure management
-- **Custom Software Factory**: End-to-end development services
+## Running it locally
 
-### 🎨 Design Features
-- **Responsive Design**: Mobile-first approach with seamless desktop experience
-- **Bilingual Support**: Spanish/English language toggle
-- **Tech Animations**: Microinteractions, loading animations, and scroll-triggered effects
-- **Modern UI/UX**: Clean, professional design aligned with tech industry standards
-- **Accessibility**: WCAG 2.1 compliant design and navigation
+No dependencies and no build. Either of these works:
 
-### ⚡ Technical Highlights
-- **Cloud Architecture**: Microsoft Azure deployment with Vercel scaling
-- **Banking Integration**: Banco Pichincha, Banco Guayaquil (SFTP/API)
-- **Electronic Invoicing**: SRI compliance with XML/PDF generation
-- **SSO Integration**: Azure Active Directory authentication
-- **Mobile App**: Android/iOS companion app with QR digital ID cards
+```bash
+# Open the file directly
+start index.html          # Windows
+open index.html           # macOS
 
-## 🎨 Brand Guidelines
+# Or serve it, which is needed to exercise 404.html and the sitemap
+npx serve@14 . -l 8000
+```
 
-### Color Palette
-Following the Tecdu brand manual:
-- **Primary**: Technology blues and digital greens
-- **Secondary**: Professional grays and accent colors
-- **Accent**: Energy colors for CTAs and highlights
+Then visit <http://localhost:8000>.
 
-### Typography
-- **Headers**: Modern, tech-focused font family
-- **Body**: Clean, readable sans-serif
-- **Code/Tech**: Monospace for technical content
+Pin the version: a bare `npx serve` can pick up a broken global install and fail with `MODULE_NOT_FOUND`. `python -m http.server 8000` is an equivalent fallback.
 
-### Visual Elements
-- **Waves and Connection Lines**: Representing data flow and connectivity
-- **Nodes and Networks**: Symbolizing system integration
-- **Geometric Patterns**: Modern, tech-inspired backgrounds
+## Deployment
 
-## 📱 Page Structure
+Deployed on Vercel at [moviralanding.wib.digital](https://moviralanding.wib.digital).
 
-### 🏠 Homepage (`index.html`)
-- **Hero Section**: "Tu Aliado en Transformación Digital"
-- **Services Overview**: Quick preview of main offerings
-- **About Preview**: Company introduction
-- **Testimonials**: Client success stories
-- **CTA Section**: "¿Listo para impulsar tu negocio?"
+Static hosting, no configuration file required: point the project at the repository root, leave the build command and the output directory empty. Vercel serves `404.html` for unresolved paths automatically.
 
-### 🛠️ Services (`services.html`)
-1. **Fábrica de Software y Desarrollo Full Stack**
-2. **Aplicaciones Móviles (iOS/Android)**
-3. **Infraestructura Cloud y DevOps**
-4. **Sistema de Gestión Académico - Tecdu**
-5. **Consultoría e Integraciones Especializadas**
+If you move the site to another domain, update the absolute URLs in `sitemap.xml`, `robots.txt`, and the `canonical`, `hreflang` and `og:url` tags in the five HTML files.
 
-### 🏢 About (`about.html`)
-- Company history and evolution
-- Mission and vision statements
-- Core values and principles
-- Team presentation
-- Client testimonials
+## Content sources
 
-### ❓ FAQ (`faq.html`)
-- Tecdu-SGA functionality
-- Server rental and 24/7 support
-- Online payment integration
-- International support
-- Post-project maintenance
+The FAQ section and both privacy pages are transcriptions of the client documents in `docs/fuentes/`, not rewrites. The privacy policy carries its original date of 25 June 2025. When MOVIRA issues an updated document, replace the PDF and update the corresponding HTML and the visible date together.
 
-### 📞 Contact (`contact.html`)
-- Contact form with validation
-- Office locations and information
-- Social media links
-- Response time expectations
+## License
 
-## 🌐 Internationalization
+MIT — see [LICENSE](LICENSE).
 
-### Language Support
-- **Spanish (es)**: Primary language for Latin American market
-- **English (en)**: International market expansion
+## Author
 
-### Implementation
-- JSON-based translation files
-- Dynamic content switching
-- URL structure: `/es/` and `/en/` prefixes
-- SEO-optimized meta tags per language
-
-## 🎯 Tecdu-SGA Features Highlight
-
-### Academic Management
-- **CACES Compliance**: Aligned with Ecuador's higher education quality standards
-- **User Role Management**: Administrator, Coordinator, Teacher, Student profiles
-- **Academic Configuration**: Study plans, schedules, and curriculum management
-- **Enrollment Process**: Guided registration with document validation
-
-### Financial Integration
-- **Bank Reconciliation**: Direct integration with major Ecuadorian banks
-- **Electronic Invoicing**: SRI-compliant XML/PDF generation
-- **Payment Processing**: Multiple payment gateways and methods
-- **Financial Reporting**: Cash flow, portfolio, and KPI dashboards
-
-### External Integrations
-- **Moodle Sync**: Bidirectional user and grade synchronization
-- **Azure AD SSO**: Centralized authentication for staff
-- **Digital Signatures**: Document signing with .p12 certificates
-- **Mobile App**: Android/iOS companion with QR ID cards
-
-## 🚀 Development Roadmap
-
-### Phase 1: Design & Structure (June 25, 2025)
-- [x] Content organization and structure
-- [ ] Figma mockups for homepage and key sections
-- [ ] Brand identity adaptation (EduTech → Edutech)
-- [ ] Logo design and variations
-
-### Phase 2: Development & Refinement (June 29, 2025)
-- [ ] HTML/CSS/JS implementation
-- [ ] Animation and interaction development
-- [ ] Responsive design testing
-- [ ] Bilingual content integration
-- [ ] Up to 3 design iteration rounds
-
-### Phase 3: Final Delivery (July 3, 2025)
-- [ ] Complete website code in private GitHub repository
-- [ ] Tecdu-SGA PowerPoint presentation template
-- [ ] Final design assets and documentation
-- [ ] html.to.design conversion preparation
-
-## 🛠️ Technical Stack
-
-### Frontend
-- **HTML5**: Semantic markup and accessibility
-- **CSS3**: Flexbox, Grid, and custom properties
-- **JavaScript (ES6+)**: Modern vanilla JS for interactions
-- **Animation Libraries**: CSS animations and JavaScript-based effects
-
-### Tools & Workflow
-- **Version Control**: Git with GitHub private repository
-- **Design**: Figma for mockups and component design
-- **Conversion**: html.to.design for Figma integration
-- **Testing**: Cross-browser compatibility testing
-
-## 📊 Success Metrics
-
-### User Experience
-- **Page Load Speed**: < 3 seconds on mobile
-- **Accessibility Score**: WCAG 2.1 AA compliance
-- **Mobile Responsiveness**: 100% functional across devices
-- **SEO Optimization**: Search engine friendly structure
-
-### Business Goals
-- **Lead Generation**: Contact form conversions
-- **Service Awareness**: Clear value proposition communication
-- **Brand Recognition**: Consistent Edutech Solutions identity
-- **Market Positioning**: Tech industry leadership demonstration
-
-## 📞 Contact & Support
-
-### Project Team
-- **Client**: Edutech Solutions LLC
-- **Design Phase**: June 18-25, 2025
-- **Development Phase**: June 25-29, 2025
-- **Final Delivery**: July 3, 2025
-
-### Communication Channels
-- **Figma Comments**: Design feedback and iterations
-- **Weekly Meetings**: Progress updates and requirement clarification
-- **GitHub Issues**: Technical discussions and bug tracking
-
-## 📋 Notes & Considerations
-
-### Brand Transition
-- **Legacy References**: Update all "EduTech Solutions LLC" to "Edutech Solutions LLC"
-- **URL Structure**: Maintain existing structure from https://edutechsolutionsllc.com/
-- **SEO Continuity**: Preserve search rankings during transition
-
-### Design Considerations
-- **Tecdu Brand Manual**: Apply color schemes and typography guidelines
-- **Tech Aesthetics**: Modern, professional, and innovation-focused
-- **User Journey**: Clear navigation path from awareness to contact
-- **Conversion Optimization**: Strategic CTA placement and messaging
-
-### Technical Requirements
-- **Responsive Design**: Mobile-first approach
-- **Performance**: Optimized images and efficient code
-- **Accessibility**: Screen reader compatibility and keyboard navigation
-- **Cross-browser Support**: Modern browser compatibility
+**Pablo Nieto Pérez** — [wib.digital](https://wib.digital)
+GitHub: [@pabloWIB](https://github.com/pabloWIB)
 
 ---
 
-*This README serves as the foundation for the Edutech Solutions LLC website project, designed to facilitate seamless design-to-development workflow and eventual Figma integration via html.to.design.*
+## Hire me
+
+I build **custom internal tools, CRMs and dashboards** for small teams, and
+**conversion-focused websites** for businesses.
+
+- [Custom internal tool, CRM or dashboard](https://www.fiverr.com/pablonietop/build-a-custom-internal-app-for-your-business) — from $45
+- [Conversion-focused website](https://www.fiverr.com/pablonietop/convert-your-landing-page-design-to-code) — from $80
+- [All my services on Fiverr](https://www.fiverr.com/pablonietop)
+- [wib.digital](https://wib.digital)
