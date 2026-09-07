@@ -86,9 +86,9 @@ Pin the version: a bare `npx serve` can pick up a broken global install and fail
 
 ## Deployment
 
-Deployed on Vercel at [moviralanding.wib.digital](https://moviralanding.wib.digital).
+Deployed on GitHub Pages at [pablowib.github.io/Movira-Landing](https://pablowib.github.io/Movira-Landing).
 
-Static hosting, no configuration file required: point the project at the repository root, leave the build command and the output directory empty. Vercel serves `404.html` for unresolved paths automatically.
+Static hosting, no configuration file required: point the project at the repository root, leave the build command and the output directory empty. GitHub Pages serves `404.html` for unresolved paths automatically.
 
 If you move the site to another domain, update the absolute URLs in `sitemap.xml`, `robots.txt`, and the `canonical`, `hreflang` and `og:url` tags in the five HTML files.
 

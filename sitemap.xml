@@ -3,35 +3,35 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://moviralanding.wib.digital/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://moviralanding.wib.digital/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://moviralanding.wib.digital/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://moviralanding.wib.digital/" />
+    <loc>https://pablowib.github.io/Movira-Landing/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pablowib.github.io/Movira-Landing/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pablowib.github.io/Movira-Landing/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pablowib.github.io/Movira-Landing/" />
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://moviralanding.wib.digital/en/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://moviralanding.wib.digital/" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://moviralanding.wib.digital/en/" />
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://moviralanding.wib.digital/" />
+    <loc>https://pablowib.github.io/Movira-Landing/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pablowib.github.io/Movira-Landing/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pablowib.github.io/Movira-Landing/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pablowib.github.io/Movira-Landing/" />
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://moviralanding.wib.digital/politica-de-privacidad.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://moviralanding.wib.digital/politica-de-privacidad.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://moviralanding.wib.digital/en/privacy-policy.html" />
+    <loc>https://pablowib.github.io/Movira-Landing/politica-de-privacidad.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pablowib.github.io/Movira-Landing/politica-de-privacidad.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pablowib.github.io/Movira-Landing/en/privacy-policy.html" />
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://moviralanding.wib.digital/en/privacy-policy.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://moviralanding.wib.digital/politica-de-privacidad.html" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://moviralanding.wib.digital/en/privacy-policy.html" />
+    <loc>https://pablowib.github.io/Movira-Landing/en/privacy-policy.html</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pablowib.github.io/Movira-Landing/politica-de-privacidad.html" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://pablowib.github.io/Movira-Landing/en/privacy-policy.html" />
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
